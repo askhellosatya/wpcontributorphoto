@@ -11,7 +11,7 @@
  * Author URI: https://satyamvishwakarma.com
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: wpcontributorphoto   
+ * Text Domain: wpcontributorphoto 
  * Domain Path: /languages
  */
 
@@ -456,8 +456,10 @@ class WPContributorPhoto {
             }
             
             $this->clear_cache();
-            echo '<div class="notice notice-success is-dismissible">
-                <p><strong>' . esc_html__('Cache cleared.', 'wpcontributorphoto') . '</strong> ' . esc_html__('Photos will refresh on next load.', 'wpcontributorphoto') . '</p>
+            echo '<div class="notice notice-success is-dismissible" style="margin: 5px 0 15px 0; padding: 12px; background: #d1e7dd; border: 1px solid #badbcc; border-left: 4px solid #0f5132; border-radius: 4px;">
+    <p style="margin: 0; color: #0f5132; font-size: 14px;">
+        <strong style="font-weight: 600;">' . esc_html__('✅ Cache Cleared!', 'wpcontributorphoto') . '</strong><br>
+        <span style="color: ##0a0a0a; font-size: 13px; opacity: 0.9;">' . esc_html__('Your photo gallery will refresh with the latest data on the next page load.', 'wpcontributorphoto') . '</span>
             </div>';
         }               
         ?>
@@ -611,7 +613,7 @@ class WPContributorPhoto {
                                 <a href="https://github.com/askhellosatya/wpcontributorphoto" target="_blank" class="wpcontrib-tool-link">
                                     <?php esc_html_e('Plugin Documentation', 'wpcontributorphoto'); ?>
                                 </a>
-                                <a href="https://satyamvishwakarma.com/contact" target="_blank" class="wpcontrib-tool-link">
+                                <a href="https://github.com/askhellosatya/wpcontributorphoto/" target="_blank" class="wpcontrib-tool-link">
                                     <?php esc_html_e('Get Support', 'wpcontributorphoto'); ?>
                                 </a>
                             </div>
@@ -715,7 +717,7 @@ class WPContributorPhoto {
             margin: 0;
             opacity: 0.85;
             font-weight: 300;
-            color: #ffffff;
+            color:rgb(219, 219, 219);
         }
 
         .wpcontrib-header-actions {
@@ -889,6 +891,44 @@ class WPContributorPhoto {
             line-height: 1.5;
             word-wrap: break-word;
         }
+			/* Enhanced Admin Notice Styling */
+.wpcontrib-admin-container .notice {
+    margin: 15px 0 20px 0 !important;
+    padding: 15px 20px !important;
+    border-radius: 6px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+    border-left-width: 5px !important;
+    font-family: inherit !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.wpcontrib-admin-container .notice.notice-success {
+    background: linear-gradient(135deg, #d1e7dd 0%, #c3e6cb 100%) !important;
+    border-left-color: #28a745 !important;
+    color: #155724 !important;
+}
+
+.wpcontrib-admin-container .notice p {
+    margin: 0 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+.wpcontrib-admin-container .notice strong {
+    font-weight: 600 !important;
+    color: #080808 !important;
+}
+
+.wpcontrib-admin-container .notice::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(40, 167, 69, 0.3), transparent);
+}
 
         .wpcontrib-help-link {
             color: #2c3338;
