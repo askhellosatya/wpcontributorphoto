@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: WordPress.org Contributor Photo Gallery
+ * Plugin Name: WP Contributor Photo Gallery
  * Plugin URI: https://github.com/askhellosatya/wpphotogallery
- * Description: Showcase your photo contributions to WordPress.org/photos directory in beautiful responsive grids on your website.
+ * Description: Showcase your photo contributions to the WordPress.org/photos directory in beautiful responsive grids on your website.
  * Version: 2.0.0
  * Requires at least: 5.0
  * Tested up to: 6.8
