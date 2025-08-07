@@ -3,51 +3,25 @@
 **Showcase your WordPress.org photo contributions in beautiful, responsive grids on your website.**
 
 [![WordPress Plugin](https://img.shields.io/badge/WordPress-Plugin-blue.svg)](https://wordpress.org)
-[![Version](https://img.shields.io/badge/Version-2.0.0-green.svg)](https://github.com/askhellosatya/wpphotogallery/releases)
+[![Version](https://img.shields.io/badge/Version-2.0.3-green.svg)](https://github.com/askhellosatya/wpcontributorphoto/releases)
 [![License](https://img.shields.io/badge/License-GPL%20v2%2B-red.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 
 Transform your WordPress.org photo contributions into stunning portfolio galleries with just one shortcode. Perfect for photographers who contribute to the WordPress.org/photos directory and want to showcase their community involvement on their personal or professional websites.
 
-- 🌐 **Repository**: [https://github.com/askhellosatya/wpphotogallery](https://github.com/askhellosatya/wpphotogallery)
-- 📖 **Documentation**: [https://github.com/askhellosatya/wpphotogallery/wiki](https://github.com/askhellosatya/wpphotogallery/wiki)
-- 🐛 **Issues**: [https://github.com/askhellosatya/wpphotogallery/issues](https://github.com/askhellosatya/wpphotogallery/issues)
-- 💬 **Discussions**: [https://github.com/askhellosatya/wpphotogallery/discussions](https://github.com/askhellosatya/wpphotogallery/discussions)
-
-## 🌟 Key Features (v2.0.0)
-
-### **Professional Gallery Display**
-- **Responsive Grid Layouts**: 1-6 column options that adapt perfectly to any design
-- **High-Quality Preview**: Smart image loading with optimized thumbnails
-- **Clean Typography**: 30-character caption truncation for consistent display
-- **Hover Effects**: Subtle animations that enhance user experience
-
-### **Enhanced Admin Experience**
-- **Professional Interface**: Photography-focused design respecting open-source values
-- **Real-time Validation**: Instant feedback for User ID configuration
-- **Copy-to-Clipboard**: Quick access to shortcode examples
-- **65%-35% Layout**: Optimal space utilization for settings and resources
-
-### **Performance & Accessibility**
-- **Smart Caching**: Configurable cache duration (5 minutes to 24 hours)
-- **Lazy Loading**: Images load only when needed for better performance
-- **Mobile Optimized**: Perfect display on all devices with responsive breakpoints
-- **SEO Friendly**: Proper linking back to your WordPress.org contributions
-
-### **Developer-Friendly**
-- **Easy Integration**: Works with any page builder supporting shortcodes
-- **Clean Code**: Well-structured, maintainable codebase
-- **Accessibility**: High contrast and screen reader friendly
-- **Customizable**: CSS classes for easy styling customization
+- 🌐 **Repository**: [https://github.com/askhellosatya/wpcontributorphoto](https://github.com/askhellosatya/wpcontributorphoto)
+- 📖 **Documentation**: [https://github.com/askhellosatya/wpcontributorphoto/wiki](https://github.com/askhellosatya/wpcontributorphoto/wiki)
+- 🐛 **Issues**: [https://github.com/askhellosatya/wpcontributorphoto/issues](https://github.com/askhellosatya/wpcontributorphoto/issues)
+- 💬 **Discussions**: [https://github.com/askhellosatya/wpcontributorphoto/discussions](https://github.com/askhellosatya/wpcontributorphoto/discussions)
 
 ## 🚀 Quick Start
 
 ### Step 1: Install & Activate
 1. Go to **Plugins → Add New** in your WordPress admin
-2. Search for **"W.Org Photo Gallery"**
+2. Search for **"WP Contributor Photo Gallery"**
 3. Click **Install** → **Activate**
 
 ### Step 2: Configure Your Profile
-1. Navigate to **W.Org Photo Gallery** in your admin menu
+1. Navigate to **WP Contributor Photo Gallery** in your admin menu
 2. Enter your **WordPress.org User ID** (not username - see guide below)
 3. Choose your preferred settings:
    - **Photos per gallery**: 12 (portfolio) to 20-24 (showcase)
@@ -56,52 +30,31 @@ Transform your WordPress.org photo contributions into stunning portfolio galleri
 4. Click **Save Settings**
 
 ### Step 3: Display Your Gallery
-Add this shortcode anywhere: `[wporg_photos]`
-
-## 🔍 Finding Your WordPress.org User ID
-
-**Important:** This plugin requires your **User ID** (a number like `21053005`), not your username.
-
-### Quick Method:
-1. **Visit your author page**: `https://wordpress.org/photos/author/YOUR-USERNAME/`
-2. **View page source**: Right-click → "View page source" or press `Ctrl+U`
-3. **Search for User ID**: Press `Ctrl+F`, search for `users/`
-4. **Find the number**: Look for `wp-json/wp/v2/users/21053005` - the number is your User ID
-
-### Example:
-- **Username**: `hellosatya`
-- **Author page**: `https://wordpress.org/photos/author/hellosatya/`
-- **User ID found**: `21053005`
-- **Enter in plugin**: `21053005`
-
-### ⚠️ Common Mistakes:
-- ❌ Don't use your username (`hellosatya`)
-- ❌ Don't use your display name
-- ✅ Use only the numeric ID (`21053005`)
+Add this shortcode anywhere: `[wpcontrib_photos]`
 
 ## 📖 Usage Examples
 
 ### **Portfolio Showcase** (Professional)
-[wporg_photos per_page="20" columns="4"]
+[wpcontrib_photos per_page="20" columns="4"]
 Perfect for portfolio pages and professional showcases.
 
 ### **About Page Integration** (Personal branding)
-[wporg_photos per_page="12" columns="3"]
+[wpcontrib_photos per_page="12" columns="3"]
 
 Great for about pages and personal branding sections.
 
 ### **Blog Post Enhancement** (Content creation)
-[wporg_photos per_page="6" columns="2"]
+[wpcontrib_photos per_page="6" columns="2"]
 
 Ideal for enhancing blog posts and articles.
 
 ### **Sidebar Widget** (Ongoing showcase)
-[wporg_photos per_page="4" columns="1"]
+[wpcontrib_photos per_page="4" columns="1"]
 
 Perfect for sidebar widgets and compact displays.
 
 ### **Default Settings**
-[wporg_photos]
+[wpcontrib_photos]
 
 
 Uses your configured default settings.
@@ -186,7 +139,7 @@ Your galleries automatically adapt:
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [contributing guidelines](https://github.com/askhellosatya/wpphotogallery/blob/main/CONTRIBUTING.md).
+We welcome contributions! Please see our [contributing guidelines](https://github.com/askhellosatya/wpcontributorphoto/blob/main/CONTRIBUTING.md).
 
 ### **Ways to Contribute**
 - 🐛 Report bugs and issues
@@ -198,9 +151,9 @@ We welcome contributions! Please see our [contributing guidelines](https://githu
 ## 📞 Support & Resources
 
 - 🌐 **Plugin Homepage**: [satyamvishwakarma.com](https://satyamvishwakarma.com)
-- 📖 **Documentation**: [GitHub Wiki](https://github.com/askhellosatya/wpphotogallery/wiki)
-- 💬 **Community Support**: [GitHub Discussions](https://github.com/askhellosatya/wpphotogallery/discussions)
-- 🐛 **Report Issues**: [GitHub Issues](https://github.com/askhellosatya/wpphotogallery/issues)
+- 📖 **Documentation**: [GitHub Wiki](https://github.com/askhellosatya/wpcontributorphoto/wiki)
+- 💬 **Community Support**: [GitHub Discussions](https://github.com/askhellosatya/wpcontributorphoto/discussions)
+- 🐛 **Report Issues**: [GitHub Issues](https://github.com/askhellosatya/wpcontributorphoto/issues)
 - 📸 **WordPress.org Photos**: [Contribute Photos](https://wordpress.org/photos/)
 
 ## 💝 Show Your Appreciation
