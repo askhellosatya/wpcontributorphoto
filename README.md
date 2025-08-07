@@ -1,5 +1,7 @@
 # WP Contributor Photo Gallery
 
+<center><img width="1425" height="732" alt="demo_page" src="https://github.com/user-attachments/assets/bbfc4e30-a2a6-490a-9892-c4a8f9006a49" /></center>
+
 **Showcase your WordPress.org photo contributions in beautiful, responsive grids on your website.**
 
 [![WordPress Plugin](https://img.shields.io/badge/WordPress-Plugin-blue.svg)](https://wordpress.org)
@@ -20,21 +22,35 @@ Transform your WordPress.org photo contributions into stunning portfolio galleri
 2. Search for **"WP Contributor Photo Gallery"**
 3. Click **Install** → **Activate**
 
+<center><img width="1240" height="75" alt="Plugin_page" src="https://github.com/user-attachments/assets/623bbecb-ad67-4c67-bf41-9056d8d1a222" /></center>
+
+
 ### Step 2: Configure Your Profile
 1. Navigate to **WP Contributor Photo Gallery** in your admin menu
-2. Enter your **WordPress.org User ID** (not username - see guide below)
-3. Choose your preferred settings:
+   
+<center><img width="159" height="243" alt="Admin_dashboard_sidebar_menu" src="https://github.com/user-attachments/assets/a6394ae7-8c0d-4eaa-b029-1c2baf9c0c92" /></center>
+
+3. Enter your **WordPress.org User ID** (not username - see guide below)
+
+<center><img width="1274" height="748" alt="plugin_settings_page" src="https://github.com/user-attachments/assets/cfa8267f-d50a-45b8-a4a5-8842cf6d454a" /></center>
+
+
+5. Choose your preferred settings:
    - **Photos per gallery**: 12 (portfolio) to 20-24 (showcase)
    - **Grid columns**: 3-4 for portfolios, 2 for compact layouts
    - **Cache duration**: 1 hour (recommended)
-4. Click **Save Settings**
+6. Click **Save Settings**
+
+<center><img width="1255" height="585" alt="Display_performance_preview" src="https://github.com/user-attachments/assets/30acdc34-77ab-4011-8607-79a23852bbf7" /></center>
+
 
 ### Step 3: Display Your Gallery
 Add this shortcode anywhere: `[wpcontrib_photos]`
 
 ## 📖 Usage Examples
 
-## 📖 Usage Examples
+<center><img width="307" height="673" alt="Usage_example_shortcodes" src="https://github.com/user-attachments/assets/515f45a8-fc16-4ce6-8da0-88ffeb3ca977" /></center>
+
 
 | Use Case | Shortcode | Description |
 |----------|-----------|-------------|
