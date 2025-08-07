@@ -34,27 +34,15 @@ Add this shortcode anywhere: `[wpcontrib_photos]`
 
 ## 📖 Usage Examples
 
-### **Portfolio Showcase** (Professional)
-[wpcontrib_photos per_page="20" columns="4"]
-Perfect for portfolio pages and professional showcases.
+## 📖 Usage Examples
 
-### **About Page Integration** (Personal branding)
-[wpcontrib_photos per_page="12" columns="3"]
-
-Great for about pages and personal branding sections.
-
-### **Blog Post Enhancement** (Content creation)
-[wpcontrib_photos per_page="6" columns="2"]
-
-Ideal for enhancing blog posts and articles.
-
-### **Sidebar Widget** (Ongoing showcase)
-[wpcontrib_photos per_page="4" columns="1"]
-
-Perfect for sidebar widgets and compact displays.
-
-### **Default Settings**
-[wpcontrib_photos]
+| Use Case | Shortcode | Description |
+|----------|-----------|-------------|
+| 🏆 **Portfolio Showcase** | `[wpcontrib_photos per_page="20" columns="4"]` | Professional portfolios and showcases |
+| 👤 **About Page** | `[wpcontrib_photos per_page="12" columns="3"]` | Personal branding sections |
+| ✍️ **Blog Enhancement** | `[wpcontrib_photos per_page="6" columns="2"]` | Content creation and articles |
+| 📱 **Sidebar Widget** | `[wpcontrib_photos per_page="4" columns="1"]` | Compact sidebar displays |
+| ⚙️ **Default** | `[wpcontrib_photos]` | Uses your configured settings |
 
 
 Uses your configured default settings.
