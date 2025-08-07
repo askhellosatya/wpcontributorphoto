@@ -1,5 +1,5 @@
 === WP Contributor Photo Gallery ===
-Contributors: satyamvishwakarma
+Contributors: hellosatya
 Tags: wordpress.org, photo contributions, contributor gallery, photography showcase, portfolio
 Requires at least: 5.0
 Tested up to: 6.8
