@@ -66,7 +66,7 @@ Uses your configured default settings.
 
 ## ⚙️ Configuration Options
 
-Access **W.Org Photo Gallery** in your WordPress admin for:
+Access **WP Contributor Photo Gallery** in your WordPress admin for:
 
 ### **Essential Configuration**
 - **WordPress.org User ID**: Your unique contributor identifier
