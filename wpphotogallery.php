@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: WP Contributor Photo Gallery
- * Plugin URI: https://github.com/askhellosatya/wpphotography
+ * Plugin URI: https://github.com/askhellosatya/wpcontributorphoto/
  * Description: Showcase your contributions to WordPress.org/photos with elegant and responsive photo galleries.
  * Version: 2.0.3
  * Requires at least: 5.0
@@ -90,7 +90,7 @@ class WPContributorPhoto {
         
         $docs_link = sprintf(
             '<a href="%s" target="_blank" style="color: #646970;">%s</a>',
-            'https://github.com/askhellosatya/wpphotography',
+            'https://github.com/askhellosatya/wpcontributorphoto',
             esc_html__('Docs', 'wpcontributorphoto')
         );
         
@@ -472,7 +472,7 @@ class WPContributorPhoto {
                         <a href="https://wordpress.org/photos/" target="_blank" class="wpcontrib-btn-primary">
                             <?php esc_html_e('Contribute Photos', 'wpcontributorphoto'); ?>
                         </a>
-                        <a href="https://github.com/askhellosatya/wpphotography" target="_blank" class="wpcontrib-btn-secondary">
+                        <a href="https://github.com/askhellosatya/wpcontributorphoto" target="_blank" class="wpcontrib-btn-secondary">
                             <?php esc_html_e('Documentation', 'wpcontributorphoto'); ?>
                         </a>
                     </div>
@@ -608,7 +608,7 @@ class WPContributorPhoto {
                                 <a href="https://wordpress.org/photos/" target="_blank" class="wpcontrib-tool-link">
                                     <?php esc_html_e('WordPress.org Photos Directory', 'wpcontributorphoto'); ?>
                                 </a>
-                                <a href="https://github.com/askhellosatya/wpphotography" target="_blank" class="wpcontrib-tool-link">
+                                <a href="https://github.com/askhellosatya/wpcontributorphoto" target="_blank" class="wpcontrib-tool-link">
                                     <?php esc_html_e('Plugin Documentation', 'wpcontributorphoto'); ?>
                                 </a>
                                 <a href="https://satyamvishwakarma.com/contact" target="_blank" class="wpcontrib-tool-link">
