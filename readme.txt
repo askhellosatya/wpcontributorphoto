@@ -2,8 +2,8 @@
 Contributors: hellosatya
 Tags: wordpress.org, photo contributions, contributor gallery, photography showcase, portfolio
 Requires at least: 5.0
-Tested up to: 6.8
-Stable tag: 2.0.0
+Tested up to: 6.6
+Stable tag: 2.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Showcase your photo contributions to WordPress.org/photos directory in beautiful
 
 **Transform your WordPress.org photo contributions into stunning portfolio galleries with professional design.**
 
-W.Org Photo Gallery helps photographers and WordPress community members showcase their photo contributions to the WordPress.org/photos directory on their own websites. Perfect for building professional portfolios, demonstrating community involvement, and getting recognition for your contributions.
+WP Contributor Photo Gallery helps photographers and WordPress community members showcase their photo contributions to the WordPress.org/photos directory on their own websites. Perfect for building professional portfolios, demonstrating community involvement, and getting recognition for your contributions.
 
 = 🌟 Why Showcase Your Contributions? =
 
@@ -30,42 +30,22 @@ W.Org Photo Gallery helps photographers and WordPress community members showcase
 * Connect with other WordPress contributors
 * Share your WordPress community journey visually
 
-= 🚀 New in Version 2.0.0 =
-
-**Major UI/UX Overhaul:**
-* Professional photography-focused admin interface
-* Fixed layout overflow issues for consistent experience
-* Enhanced gallery preview with 2 high-quality images
-* 30-character caption truncation for clean display
-
-**Enhanced User Experience:**
-* Copy-to-clipboard functionality for shortcode examples
-* Real-time User ID validation with instant feedback
-* Stylish Tools & Resources panel with gradients and animations
-* 65%-35% admin layout for optimal space utilization
-
-**Performance & Accessibility:**
-* Improved mobile responsiveness
-* Better color contrast and accessibility
-* Performance optimizations and code cleanup
-* Enhanced caching mechanisms
-
 = 📖 Easy Usage Examples =
 
 **Basic showcase** (uses your settings):
-`[wporg_photos]`
+`[wpcontrib_photos]`
 
 **Portfolio showcase** (professional portfolios):
-`[wporg_photos per_page="20" columns="4"]`
+`[wpcontrib_photos per_page="20" columns="4"]`
 
 **About page integration** (personal branding):
-`[wporg_photos per_page="12" columns="3"]`
+`[wpcontrib_photos per_page="12" columns="3"]`
 
 **Blog post enhancement** (content creation):
-`[wporg_photos per_page="6" columns="2"]`
+`[wpcontrib_photos per_page="6" columns="2"]`
 
 **Sidebar widget** (ongoing showcase):
-`[wporg_photos per_page="4" columns="1"]`
+`[wpcontrib_photos per_page="4" columns="1"]`
 
 = ⚙️ Professional Configuration =
 
@@ -121,10 +101,10 @@ W.Org Photo Gallery helps photographers and WordPress community members showcase
 
 1. Install through **Plugins → Add New** or upload manually
 2. Activate the plugin
-3. Go to **W.Org Photo Gallery** in your admin menu (main menu item for easy access)
+3. Go to **WP Contributor Photo Gallery** in your admin menu (main menu item for easy access)
 4. Enter your WordPress.org User ID (see guide below)
 5. Configure your preferred gallery layout and settings
-6. Use `[wporg_photos]` shortcode anywhere on your site
+6. Use `[wpcontrib_photos]` shortcode anywhere on your site
 
 == Frequently Asked Questions ==
 
@@ -146,13 +126,13 @@ The plugin includes a detailed step-by-step guide with interactive help.
 
 = Can I customize the gallery appearance? =
 
-Yes! Version 2.0.0 includes professional styling with multiple layout options:
+Yes! Version 2.0.3 includes professional styling with multiple layout options:
 - Choose 1-6 columns for different contexts
 - Control photo descriptions and truncation
 - Adjust cache duration for performance
 - Customize link behavior (new tab/same tab)
 
-All elements use `wporg-` CSS prefixes for easy custom styling.
+All elements use `wpcontrib-` CSS prefixes for easy custom styling.
 
 = Will this help my SEO and professional credibility? =
 
@@ -182,6 +162,13 @@ The plugin includes smart caching (5 minutes to 24 hours) to ensure fast loading
 
 == Changelog ==
 
+= 2.0.3 =
+* **Updated Shortcode**: Changed from `[wporg_photos]` to `[wpcontrib_photos]` for consistency
+* **Fixed Security Issues**: Enhanced input sanitization and proper nonce handling
+* **Text Domain Compliance**: Fixed text domain mismatches for WordPress.org standards
+* **Improved Cache Management**: Better cache clearing using WordPress native functions
+* **Enhanced Performance**: Optimized database queries and caching mechanisms
+
 = 2.0.0 =
 * **Major UI/UX Overhaul**: Complete redesign with photography-focused, professional interface
 * **Enhanced Admin Layout**: 65%-35% layout split for optimal space utilization
@@ -191,18 +178,10 @@ The plugin includes smart caching (5 minutes to 24 hours) to ensure fast loading
 * **Stylish Tools Panel**: Enhanced Resources section with gradients, animations, and icons
 * **Better Form Controls**: Range sliders, toggle switches, and interactive elements
 * **Real-time Validation**: Instant feedback for User ID configuration with helpful guidance
-* **Updated Admin Menu**: Changed to "W.Org Photo Gallery" with clearer camera icon
+* **Updated Admin Menu**: Changed to "WP Contributor Photo Gallery" with clearer camera icon
 * **Mobile Optimization**: Enhanced responsive design for all screen sizes
 * **Accessibility Improvements**: Better color contrast and screen reader support
 * **Performance Optimization**: Code cleanup and faster loading throughout
-* **Enhanced Documentation**: Comprehensive help system and user guidance
-
-= 1.1.0 =
-* Added comprehensive admin settings for contributors
-* Enhanced professional gallery layouts  
-* Improved responsive design for portfolio use
-* Better SEO optimization for contributor profiles
-* Performance improvements for professional websites
 
 = 1.0.0 =
 * Initial release with basic photo gallery functionality
@@ -212,16 +191,15 @@ The plugin includes smart caching (5 minutes to 24 hours) to ensure fast loading
 
 == Upgrade Notice ==
 
-= 2.0.0 =
-Major design overhaul with professional photography-focused interface, enhanced admin experience, and improved mobile responsiveness. Includes copy-to-clipboard shortcuts, better gallery preview, and performance optimizations. Recommended for all users.
+= 2.0.3 =
+Important update: Shortcode changed to [wpcontrib_photos]. Please update your existing shortcodes. Enhanced security, WordPress.org compliance, and performance improvements included.
 
 == Support ==
 
 **Support & Development:**
-* 🌐 Plugin Homepage: [satyamvishwakarma.com](https://satyamvishwakarma.com)
-* 📖 Documentation: [GitHub Wiki](https://github.com/askhellosatya/wpphotogallery/wiki)
-* 💬 Community Support: [GitHub Discussions](https://github.com/askhellosatya/wpphotogallery/discussions)
-* 🐛 Report Issues: [GitHub Issues](https://github.com/askhellosatya/wpphotogallery/issues)
+* 📖 Documentation: [GitHub Wiki](https://github.com/askhellosatya/wpcontributorphoto/wiki)
+* 💬 Community Support: [GitHub Discussions](https://github.com/askhellosatya/wpcontributorphoto/discussions)
+* 🐛 Report Issues: [GitHub Issues](https://github.com/askhellosatya/wpcontributorphoto/issues)
 * 📸 WordPress.org Photos: [Contribute Photos](https://wordpress.org/photos/)
 
-**Developer**: Satyam Vishwakarma - WordPress Consultant & Community Contributor
+**Developer**: [Satyam Vishwakarma](https://satyamvishwakarma.com) - WordPress Consultant & Community Contributor
