@@ -1,4 +1,4 @@
-# WordPress.org Contributor Photo Gallery
+# WP Contributor Photo Gallery
 
 **Showcase your WordPress.org photo contributions in beautiful, responsive grids on your website.**
 
