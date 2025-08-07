@@ -138,7 +138,6 @@ We welcome contributions! Please see our [contributing guidelines](https://githu
 
 ## 📞 Support & Resources
 
-- 🌐 **Plugin Homepage**: [satyamvishwakarma.com](https://satyamvishwakarma.com)
 - 📖 **Documentation**: [GitHub Wiki](https://github.com/askhellosatya/wpcontributorphoto/wiki)
 - 💬 **Community Support**: [GitHub Discussions](https://github.com/askhellosatya/wpcontributorphoto/discussions)
 - 🐛 **Report Issues**: [GitHub Issues](https://github.com/askhellosatya/wpcontributorphoto/issues)
