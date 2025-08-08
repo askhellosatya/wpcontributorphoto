@@ -5,15 +5,15 @@
 **Showcase your WordPress.org photo contributions in beautiful, responsive grids on your website.**
 
 [![WordPress Plugin](https://img.shields.io/badge/WordPress-Plugin-blue.svg)](https://wordpress.org)
-[![Version](https://img.shields.io/badge/Version-2.0.3-green.svg)](https://github.com/askhellosatya/wpcontributorphoto/releases)
+[![Version](https://img.shields.io/badge/Version-2.0.3-green.svg)](https://github.com/askhellosatya/contributor-photo-gallery/releases)
 [![License](https://img.shields.io/badge/License-GPL%20v2%2B-red.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
 
 Transform your WordPress.org photo contributions into stunning portfolio galleries with just one shortcode. Perfect for photographers who contribute to the WordPress.org/photos directory and want to showcase their community involvement on their personal or professional websites.
 
-- 🌐 **Repository**: [https://github.com/askhellosatya/wpcontributorphoto](https://github.com/askhellosatya/wpcontributorphoto)
-- 📖 **Documentation**: [https://github.com/askhellosatya/wpcontributorphoto/wiki](https://github.com/askhellosatya/wpcontributorphoto/wiki)
-- 🐛 **Issues**: [https://github.com/askhellosatya/wpcontributorphoto/issues](https://github.com/askhellosatya/wpcontributorphoto/issues)
-- 💬 **Discussions**: [https://github.com/askhellosatya/wpcontributorphoto/discussions](https://github.com/askhellosatya/wpcontributorphoto/discussions)
+- 🌐 **Repository**: [https://github.com/askhellosatya/wpcontributorphoto](https://github.com/askhellosatya/contributor-photo-gallery)
+- 📖 **Documentation**: [https://github.com/askhellosatya/wpcontributorphoto/wiki](https://github.com/askhellosatya/contributor-photo-gallery/wiki)
+- 🐛 **Issues**: [https://github.com/askhellosatya/wpcontributorphoto/issues](https://github.com/askhellosatya/contributor-photo-gallery/issues)
+- 💬 **Discussions**: [https://github.com/askhellosatya/wpcontributorphoto/discussions](https://github.com/askhellosatya/contributor-photo-gallery/discussions)
 
 ## 🚀 Quick Start
 
@@ -143,7 +143,7 @@ Your galleries automatically adapt:
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [contributing guidelines](https://github.com/askhellosatya/wpcontributorphoto/blob/main/CONTRIBUTING.md).
+We welcome contributions! Please see our [contributing guidelines](https://github.com/askhellosatya/contributor-photo-gallery/blob/main/CONTRIBUTING.md).
 
 ### **Ways to Contribute**
 - 🐛 Report bugs and issues
@@ -154,9 +154,9 @@ We welcome contributions! Please see our [contributing guidelines](https://githu
 
 ## 📞 Support & Resources
 
-- 📖 **Documentation**: [GitHub Wiki](https://github.com/askhellosatya/wpcontributorphoto/wiki)
-- 💬 **Community Support**: [GitHub Discussions](https://github.com/askhellosatya/wpcontributorphoto/discussions)
-- 🐛 **Report Issues**: [GitHub Issues](https://github.com/askhellosatya/wpcontributorphoto/issues)
+- 📖 **Documentation**: [GitHub Wiki](https://github.com/askhellosatya/contributor-photo-gallery/wiki)
+- 💬 **Community Support**: [GitHub Discussions](https://github.com/askhellosatya/contributor-photo-gallery/discussions)
+- 🐛 **Report Issues**: [GitHub Issues](https://github.com/askhellosatya/contributor-photo-gallery/issues)
 - 📸 **WordPress.org Photos**: [Contribute Photos](https://wordpress.org/photos/)
 
 ## 💝 Show Your Appreciation
