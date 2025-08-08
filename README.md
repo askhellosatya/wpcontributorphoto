@@ -1,4 +1,4 @@
-# WP Contributor Photo Gallery
+# Contributor Photo Gallery
 
 <center><img width="1425" height="732" alt="demo_page" src="https://github.com/user-attachments/assets/bbfc4e30-a2a6-490a-9892-c4a8f9006a49" /></center>
 
