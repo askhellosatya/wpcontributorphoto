@@ -175,7 +175,6 @@ If you want additional hooks added for deep customization, open an issue or PR a
 - Discussions: https://github.com/askhellosatya/contributor-photo-gallery/discussions
 
 Maintainers:
-- `hellosatya` (primary contributor)
 - `askhellosatya` (repo maintainer)
 
 If you need commercial customization or priority support, contact the author: https://satyamvishwakarma.com
