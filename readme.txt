@@ -1,6 +1,6 @@
 === Contributor Photo Gallery ===
 Contributors: hellosatya
-Tags: gallery, photography, portfolio, wordpress, wordpress.org, contributor, photos, responsive, shortcode, portfolio-gallery, image-gallery
+Tags: gallery, photography, portfolio, shortcode, responsive
 Requires at least: 5.8
 Tested up to: 6.8
 Stable tag: 2.5.0
@@ -8,7 +8,7 @@ License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires PHP: 7.4
 
-Showcase your WordPress.org/photos contributions in fast, responsive, SEO-friendly galleries with professional card styles, caption control, and flexible layout options.
+Showcase WordPress.org/photos contributions in fast, responsive, SEO-friendly galleries with professional card styles and flexible layout options.
 
 == Description ==
 
