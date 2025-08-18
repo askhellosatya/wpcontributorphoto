@@ -17,6 +17,7 @@ class CPG_Admin {
     public function __construct() {
         $this->options = cpg_get_plugin_options();
 
+
         add_action( 'admin_menu', [ $this, 'add_admin_menu' ] );
         add_action( 'admin_init', [ $this, 'admin_init' ] );
 
@@ -26,9 +27,17 @@ class CPG_Admin {
         // Show site-wide setup notice (if plugin likely needs initial setup)
         add_action( 'admin_notices', [ $this, 'maybe_show_setup_notice' ] );
 
+        // Show shortcode update notice on settings page
+        add_action( 'admin_notices', [ $this, 'maybe_show_shortcode_notice' ] );
+
         // AJAX handlers for dismissible notices
         add_action( 'wp_ajax_cpg_dismiss_new_shortcode_notice', [ $this, 'ajax_dismiss_new_shortcode_notice' ] );
         add_action( 'wp_ajax_cpg_dismiss_setup_notice', [ $this, 'ajax_dismiss_setup_notice' ] );
+        add_action( 'wp_ajax_cpg_dismiss_shortcode_notice', [ $this, 'ajax_dismiss_shortcode_notice' ] );
+        
+        // Debug: Force notice to show for testing
+        add_action( 'admin_notices', function() {
+        });
     }
 
     /**
@@ -44,6 +53,28 @@ class CPG_Admin {
             'dashicons-camera',
             58
         );
+        
+        // Add settings submenu
+        add_submenu_page(
+            'contributor-photo-gallery',
+            __( 'Settings', 'contributor-photo-gallery' ),
+            __( 'Settings', 'contributor-photo-gallery' ),
+            'manage_options',
+            'contributor-photo-gallery',
+            [ $this, 'settings_page' ]
+        );
+        
+        // Add plugin action links
+        add_filter( 'plugin_action_links_' . plugin_basename( CPG_PLUGIN_PATH . 'contributor-photo-gallery.php' ), [ $this, 'add_plugin_action_links' ] );
+    }
+    
+    /**
+     * Add plugin action links
+     */
+    public function add_plugin_action_links( $links ) {
+        $settings_link = '<a href="' . admin_url( 'admin.php?page=contributor-photo-gallery' ) . '">' . __( 'Settings', 'contributor-photo-gallery' ) . '</a>';
+        array_unshift( $links, $settings_link );
+        return $links;
     }
 
     /**
@@ -79,24 +110,12 @@ class CPG_Admin {
     }
 
     /**
-     * Show a site-wide setup notice if plugin isn't configured (one-time until dismissed)
-     * - Only shown to users with manage_options capability (admins)
-     * - Hidden when default_user_id is set
+     * Show setup notice if user ID is not configured
      */
     public function maybe_show_setup_notice() {
-        if ( ! current_user_can( 'manage_options' ) ) {
-            return;
-        }
-
-        // If user already dismissed the site-wide setup notice, don't show
-        $dismissed = get_option( 'cpg_setup_notice_dismissed', 0 );
-        if ( $dismissed ) {
-            return;
-        }
-
-        // If plugin already has a user id configured, don't show
-        $opts = cpg_get_plugin_options();
-        $user_id = isset( $opts['default_user_id'] ) ? trim( $opts['default_user_id'] ) : '';
+        
+        $options = cpg_get_plugin_options();
+        $user_id = isset( $options['default_user_id'] ) ? $options['default_user_id'] : '';
 
         if ( ! empty( $user_id ) ) {
             return;
@@ -105,25 +124,75 @@ class CPG_Admin {
         $settings_url = esc_url( admin_url( 'admin.php?page=contributor-photo-gallery' ) );
         $nonce = wp_create_nonce( 'cpg_setup_nonce' );
 
-        // Native WP admin notice with is-dismissible class
+        // Beautiful, elegant setup notice matching WordPress.org plugin style
         ?>
-        <div class="notice notice-warning is-dismissible cpg-setup-notice" data-cpg-nonce="<?php echo esc_attr( $nonce ); ?>" data-cpg-action="cpg_dismiss_setup_notice">
-            <p style="margin:0;">
-                <strong><?php esc_html_e( 'Contributor Photo Gallery needs setup', 'contributor-photo-gallery' ); ?>:</strong>
-                <?php esc_html_e( 'Provide your WordPress.org contributor User ID in plugin settings to fetch and display your photos.', 'contributor-photo-gallery' ); ?>
-                <a href="<?php echo $settings_url; ?>" style="margin-left:12px;"><?php esc_html_e( 'Open settings', 'contributor-photo-gallery' ); ?></a>
-            </p>
+        <div class="cpg-setup-notice-wrapper">
+            <div class="cpg-setup-notice" data-cpg-nonce="<?php echo esc_attr( $nonce ); ?>" data-cpg-action="cpg_dismiss_setup_notice">
+                <div class="cpg-setup-notice-content">
+                    <div class="cpg-setup-notice-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="cpg-setup-notice-text">
+                        <strong><?php esc_html_e( 'Contributor Photo Gallery', 'contributor-photo-gallery' ); ?>:</strong>
+                        <span><?php esc_html_e( 'Ready to showcase your photo contributions?', 'contributor-photo-gallery' ); ?></span>
+                        <a href="<?php echo $settings_url; ?>" class="cpg-setup-notice-link"><?php esc_html_e( 'Complete Setup →', 'contributor-photo-gallery' ); ?></a>
+                    </div>
+                    <button type="button" class="cpg-setup-notice-dismiss" aria-label="<?php esc_attr_e( 'Dismiss this notice', 'contributor-photo-gallery' ); ?>">
+                        <span class="dashicons dashicons-no-alt"></span>
+                    </button>
+                </div>
+            </div>
         </div>
 
         <script type="text/javascript">
         (function(){
-            // Listen for native WP notice dismissal (the dismiss button has class 'notice-dismiss').
-            // When user clicks dismiss, send AJAX to persist dismissal.
+            console.log('CPG: Setup notice script loaded');
+            
+            // Clean dismiss functionality
             document.addEventListener('click', function (e) {
                 var el = e.target;
-                if (el && el.classList && el.classList.contains('notice-dismiss')) {
+                if (el && (el.classList.contains('cpg-setup-notice-dismiss') || el.closest('.cpg-setup-notice-dismiss'))) {
+                    e.preventDefault();
+                    console.log('CPG: Dismiss button clicked');
                     var notice = el.closest('.cpg-setup-notice');
                     if (notice) {
+                        // Smooth fade out
+                        notice.style.opacity = '0';
+                        notice.style.transform = 'translateY(-10px)';
+                        
+                        setTimeout(function() {
+                            notice.remove();
+                        }, 200);
+
+                        // TESTING MODE: Show notice again after 3 seconds
+                        // Remove this setTimeout block when ready for production
+                        setTimeout(function() {
+                            console.log('CPG: Recreating notice for testing');
+                            var newNotice = notice.cloneNode(true);
+                            notice.parentNode.appendChild(newNotice);
+                            
+                            // Re-add event listeners to the new notice
+                            var dismissBtn = newNotice.querySelector('.cpg-setup-notice-dismiss');
+                            if (dismissBtn) {
+                                dismissBtn.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    var noticeEl = this.closest('.cpg-setup-notice');
+                                    if (noticeEl) {
+                                        noticeEl.style.opacity = '0';
+                                        noticeEl.style.transform = 'translateY(-10px)';
+                                        setTimeout(function() {
+                                            noticeEl.remove();
+                                        }, 200);
+                                    }
+                                });
+                            }
+                        }, 3000);
+
+                        // COMMENTED OUT FOR TESTING: Send AJAX to persist dismissal
+                        // Uncomment this section when ready for production
+                        /*
                         var nonce = notice.getAttribute('data-cpg-nonce') || '';
                         var data = new FormData();
                         data.append('action', 'cpg_dismiss_setup_notice');
@@ -134,11 +203,64 @@ class CPG_Admin {
                             credentials: 'same-origin',
                             body: data
                         }).catch(function(){ /* ignore network errors */ });
+                        */
                     }
                 }
             }, { capture: true });
+
+            // Simple entrance animation
+            document.addEventListener('DOMContentLoaded', function() {
+                var notice = document.querySelector('.cpg-setup-notice');
+                if (notice) {
+                    console.log('CPG: Notice found, adding animation');
+                    setTimeout(function() {
+                        notice.style.opacity = '1';
+                        notice.style.transform = 'translateY(0)';
+                    }, 100);
+                } else {
+                    console.log('CPG: No notice found in DOM');
+                }
+            });
         })();
         </script>
+        <?php
+    }
+
+    /**
+     * Show shortcode update notice on settings page
+     */
+    public function maybe_show_shortcode_notice() {
+        // Only show on our settings page
+        if ( ! isset( $_GET['page'] ) || $_GET['page'] !== 'contributor-photo-gallery' ) {
+            return;
+        }
+
+        // Check if user has dismissed this notice
+        $dismissed = get_option( 'cpg_shortcode_notice_dismissed', 0 );
+        if ( $dismissed ) {
+            return;
+        }
+
+        ?>
+        <div class="cpg-shortcode-notice-wrapper">
+            <div class="cpg-shortcode-notice" data-cpg-action="cpg_dismiss_shortcode_notice">
+                <div class="cpg-shortcode-notice-content">
+                    <div class="cpg-shortcode-notice-icon">
+                        <span class="dashicons dashicons-shortcode"></span>
+                    </div>
+                    <div class="cpg-shortcode-notice-text">
+                        <strong><?php esc_html_e( 'Shortcode Updated:', 'contributor-photo-gallery' ); ?></strong>
+                        <span>
+                            <?php esc_html_e( 'The gallery shortcode has changed to', 'contributor-photo-gallery' ); ?>
+                            <code>[cp_gallery]</code>.<?php esc_html_e( 'For the best experience, please update your existing shortcodes. Your old shortcodes will continue to work for now.', 'contributor-photo-gallery' ); ?>
+                        </span>
+                    </div>
+                    <button type="button" class="cpg-shortcode-notice-dismiss" aria-label="<?php esc_attr_e( 'Dismiss this notice', 'contributor-photo-gallery' ); ?>">
+                        <span class="dashicons dashicons-no-alt"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
         <?php
     }
 
@@ -234,8 +356,8 @@ class CPG_Admin {
         <div class="cpg-field-container">
             <div class="cpg-columns-grid">
                 <?php foreach ( $column_options as $value => $option ): ?>
-                    <label class="cpg-column-option <?php echo $columns == $value ? 'selected' : ''; ?>">
-                        <input type="radio" name="cpg_options[default_columns]" value="<?php echo esc_attr( $value ); ?>" <?php checked( $columns, $value ); ?> />
+                    <label class="cpg-column-option <?php echo $columns == $value ? 'selected' : ''; ?>" data-value="<?php echo esc_attr( $value ); ?>">
+                        <input type="radio" name="cpg_options[default_columns]" value="<?php echo esc_attr( $value ); ?>" <?php checked( $columns, $value ); ?> class="cpg-column-radio" />
                         <div class="cpg-column-card">
                             <div class="cpg-column-label"><?php echo esc_html( $option['label'] ); ?></div>
                             <div class="cpg-column-desc"><?php echo esc_html( $option['desc'] ); ?></div>
@@ -524,5 +646,19 @@ class CPG_Admin {
         // Persist dismissal globally (use update_user_meta if you prefer per-user)
         update_option( 'cpg_setup_notice_dismissed', 1 );
         wp_send_json_success( [ 'message' => 'Setup notice dismissed' ] );
+    }
+
+    /**
+     * AJAX: dismiss the shortcode update notice
+     */
+    public function ajax_dismiss_shortcode_notice() {
+        check_ajax_referer( 'wpcpg_admin_nonce', 'nonce' );
+
+        if ( ! current_user_can( 'manage_options' ) ) {
+            wp_send_json_error( [ 'message' => 'Permission denied' ], 403 );
+        }
+
+        update_option( 'cpg_shortcode_notice_dismissed', 1 );
+        wp_send_json_success( [ 'message' => 'Shortcode notice dismissed' ] );
     }
 }
