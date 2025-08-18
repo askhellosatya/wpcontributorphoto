@@ -14,7 +14,7 @@ $enable_lazy_loading = !empty($options['enable_lazy_loading']);
             <p>Showcase your photo contributions with elegance</p>
         </div>
         <div class="cpg-header-actions">
-            <a href="https://wordpress.org/photos/" target="_blank" class="cpg-btn-primary">Contribute Photos</a>
+            <a href="https://wordpress.org/photos/submit/" target="_blank" class="cpg-btn-primary">Contribute Photos</a>
             <a href="https://github.com/askhellosatya/contributor-photo-gallery" target="_blank" class="cpg-btn-secondary">Documentation</a>
         </div>
     </div>
