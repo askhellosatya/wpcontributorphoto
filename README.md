@@ -186,11 +186,3 @@ If you need commercial customization or priority support, contact the author: ht
 Contributor Photo Gallery is licensed under the GPL v2 or later — see `LICENSE` file.
 
 ---
-
-## Final notes & best practices for plugin directory
-
-- Use descriptive screenshots (PNG) in repo root named `screenshot-1.png`, `screenshot-2.png`, etc., to display in the WordPress.org plugin directory.
-- Keep the `readme.txt` updated with the stable tag and tested WP versions.
-- Include translation PO/MO files in `/languages` for i18n.
-- Keep changelog and upgrade notices concise and helpful for users.
-- Preserve existing option keys (we use `cpg_options`) to ensure seamless upgrades.
