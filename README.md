@@ -37,9 +37,9 @@ Turn your WordPress.org/photos contributions into beautiful, responsive, and SEO
 
 - Primary shortcode: `[cp_gallery]`  
 - Legacy shortcode `[wpcontrib_photos]` preserved for compatibility.  
-- Caption Text Color option — customize caption font color for contrast and branding (fixes [#1](https://github.com/askhellosatya/contributor-photo-gallery/issues/1)).  
+- Caption Text Color option — customize caption font color for contrast and branding.  
 - Enhanced grid styles: Polaroid, Circle, Fixed Height, Modern.  
-- Card customization: background color (fixes [#1](https://github.com/askhellosatya/contributor-photo-gallery/issues/1)), border (style/width/color), drop shadows, caption toggle.  
+- Card customization: background, border (style/width/color), drop shadows, caption toggle.  
 - Live admin preview auto-refresh; removed manual "Refresh Preview" button.  
 - Robust settings migration - upgrades keep user settings intact.  
 - Minimum WordPress requirement updated to 5.8.

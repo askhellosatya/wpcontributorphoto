@@ -1,0 +1,3224 @@
+/* ====== BASE CONTAINER ====== */
+.cpg-admin-container {
+  max-width: 1200px;
+  margin: 10px 10px; /* Top: 10, Bottom: 10px, Left/Right: auto (centered) */
+  padding: 0 0; /* Top/Bottom: 0, Left/Right: 20px */
+  background: #fafafa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #2c3338;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(44,51,56,0.06);
+  overflow: hidden;
+}
+
+/* ====== HEADER SECTION ====== */
+.cpg-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 40px;
+  border-radius: 12px 12px 0 0;
+  background: linear-gradient(135deg, #2c3338 0%, #1e252b 100%);
+  color: #ffffff;
+  box-shadow: 0 2px 12px rgba(44,51,56,0.10);
+  position: relative;
+}
+
+.cpg-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+}
+
+.cpg-header h1 {
+  font-size: 2.2rem;
+  margin: 0 0 8px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #fff;
+  line-height: 1.1;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.cpg-header p {
+  font-size: 1.13rem;
+  margin: 0;
+  opacity: 0.88;
+  color: #e3e6ed;
+  font-weight: 300;
+}
+
+.cpg-header-actions { 
+  display: flex; 
+  gap: 16px; 
+}
+
+.cpg-btn-primary, .cpg-btn-secondary {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  letter-spacing: 0.3px;
+}
+
+.cpg-btn-primary {
+  background: #ffffff;
+  color: #2c3338;
+  border-color: #ffffff;
+}
+
+.cpg-btn-primary:hover {
+  background: #f6f7f7;
+  color: #2c3338;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cpg-btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.3);
+}
+
+.cpg-btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ====== MAIN LAYOUT ====== */
+.cpg-main-content {
+  display: flex;
+  gap: 32px;
+  padding: 32px 40px 40px;
+  background: #fafafa;
+}
+
+.cpg-settings-panel {
+  flex: 2;
+  min-width: 0;
+}
+
+.cpg-sidebar {
+  flex: 1.1;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ====== CARD SYSTEM ====== */
+.cpg-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(44,51,56,0.06);
+  margin-bottom: 24px;
+  padding: 0;
+  border: 1px solid #e7e7ea;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.cpg-card:hover {
+  box-shadow: 0 4px 20px rgba(44,51,56,0.08);
+}
+
+.cpg-card-header {
+  padding: 20px 24px 16px;
+  background: linear-gradient(135deg, #f9f9f9 0%, #f1f2f6 100%);
+  border-bottom: 1px solid #e7e7ea;
+}
+
+.cpg-card-header h2, .cpg-card-header h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  color: #2c3338;
+  letter-spacing: -0.2px;
+}
+
+.cpg-card-header p {
+  font-size: 14px;
+  color: #5a5f69;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cpg-card-content {
+  padding: 24px;
+}
+
+/* ====== FORM ELEMENTS ====== */
+.cpg-form-row {
+  margin-bottom: 24px;
+}
+
+.cpg-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2c3338;
+}
+
+.cpg-input-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.cpg-input-field, .cpg-select-field {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid #d9dbe1;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #ffffff;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.cpg-input-field:focus, .cpg-select-field:focus {
+  border-color: #2c3338;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(44,51,56,0.08);
+}
+
+.cpg-help-btn {
+  background: #2c3338;
+  color: #ffffff;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cpg-help-btn:hover {
+  background: #1e252b;
+  transform: scale(1.05);
+}
+
+.cpg-field-status {
+  font-size: 13px;
+  margin: 6px 0;
+  min-height: 18px;
+}
+
+.cpg-field-status.success { color: #00a32a; }
+.cpg-field-status.error { color: #d63638; }
+
+.cpg-field-desc {
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* ====== RANGE SLIDER ====== */
+.cpg-range-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.cpg-range-slider {
+  flex: 1;
+  height: 4px;
+  border-radius: 999px;
+  background: #e6e8ee;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.cpg-range-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #2c3338;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cpg-range-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(44,51,56,0.3);
+}
+
+.cpg-range-value {
+  background: #2c3338;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 70px;
+  text-align: center;
+}
+
+/* ====== COLUMN GRID ====== */
+.cpg-columns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.cpg-column-option {
+  position: relative;
+  border: 2px solid #c3c4c7;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #fff;
+  overflow: hidden;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cpg-column-option:hover {
+  border-color: #2271b1;
+  background: #f0f6fc;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(34, 113, 177, 0.1);
+}
+
+.cpg-column-option.selected {
+  border-color: #2271b1;
+  background: #f0f6fc;
+  box-shadow: 0 0 0 1px #2271b1, 0 2px 8px rgba(34, 113, 177, 0.15);
+}
+
+.cpg-column-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cpg-column-card {
+  padding: 20px 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.cpg-column-label {
+  font-weight: 600;
+  color: #1d2327;
+  font-size: 14px;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.cpg-column-desc {
+  color: #646970;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+
+/* ====== TOGGLE SWITCHES ====== */
+.cpg-toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cpg-toggle-container input {
+  display: none;
+}
+
+.cpg-toggle-slider {
+  position: relative;
+  width: 46px;
+  height: 24px;
+  background: #d8dbe2;
+  border-radius: 24px;
+  transition: background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.cpg-toggle-slider:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cpg-toggle-container input:checked + .cpg-toggle-slider {
+  background: #2c3338;
+}
+
+.cpg-toggle-container input:checked + .cpg-toggle-slider:before {
+  transform: translateX(22px);
+}
+
+.cpg-toggle-label {
+  font-size: 14px;
+  color: #2c3338;
+  font-weight: 500;
+}
+
+/* ====== SAVE BUTTON ====== */
+.cpg-form-footer {
+  padding: 24px;
+  background: linear-gradient(135deg, #f9f9f9 0%, #f1f2f6 100%);
+  text-align: center;
+  border-top: 1px solid #e7e7ea;
+}
+
+.cpg-btn-save {
+  background: linear-gradient(135deg, #2c3338 0%, #1e252b 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  padding: 14px 32px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  letter-spacing: 0.3px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(44,51,56,0.2) !important;
+}
+
+.cpg-btn-save:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 16px rgba(44,51,56,0.3) !important;
+}
+
+/* ====== USAGE EXAMPLES - CLEAN & ICON-FREE ====== */
+/* ====== ENHANCED CODE BLOCK LAYOUT - NO OVERFLOW ====== */
+
+/* Better sized example items */
+.cpg-example-item {
+  margin-bottom: 18px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f4f6ff 0%, #ffffff 100%);
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 4px 15px rgba(102, 110, 234, 0.15);
+  transition: all 0.3s ease;
+  overflow: hidden; /* Prevent any overflow */
+}
+
+.cpg-example-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 110, 234, 0.25);
+}
+
+/* Enhanced example header */
+.cpg-example-header {
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.cpg-example-header strong {
+  display: block;
+  color: #2c3338;
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: -0.1px;
+}
+
+.cpg-example-header small {
+  color: #6b7280;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Properly sized code block container */
+.cpg-code-block {
+  display: flex;
+  align-items: stretch; /* Changed from center to stretch */
+  gap: 12px;
+  background: linear-gradient(135deg, #fafbff 0%, #ffffff 100%);
+  padding: 16px 18px; /* Increased padding */
+  border-radius: 10px;
+  border: 1px solid #e8edf7;
+  box-shadow: 
+    0 3px 10px rgba(102, 126, 234, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 56px; /* Ensure minimum height */
+}
+
+.cpg-code-block:hover {
+  border-color: rgba(102, 126, 234, 0.25);
+  box-shadow: 
+    0 6px 20px rgba(102, 126, 234, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  background: linear-gradient(135deg, #ffffff 0%, #f8faff 100%);
+}
+
+/* Code content with proper wrapping */
+.cpg-code-block code {
+  flex: 1;
+  background: none;
+  font-family: 'SF Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+  color: #2c3338;
+  line-height: 1.5;
+  padding: 8px 0; /* Vertical padding for better alignment */
+  border: none;
+  font-weight: 500;
+  word-break: break-all; /* Ensure long codes wrap */
+  white-space: pre-wrap; /* Allow wrapping */
+  display: flex;
+  align-items: center; /* Center the code vertically */
+}
+
+/* Enhanced copy button - stays inside */
+/* ====== CLEAN BLACK COPY BUTTON STYLING ====== */
+
+/* Copy button with clean black background */
+.cpg-copy-btn {
+  background-color: #000000 !important; /* solid black background */
+  color: #ffffff !important; /* white text */
+  border: none !important;
+  padding: 10px 18px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+  font-size: 12px !important;
+  cursor: pointer !important;
+  transition: background-color 0.3s ease !important;
+  box-shadow: none !important; /* remove shadows for cleaner look */
+  min-width: 70px !important;
+  text-align: center !important;
+}
+
+/* Remove all pseudo-elements completely */
+.cpg-copy-btn::before,
+.cpg-copy-btn::after {
+  display: none !important;
+  content: none !important;
+}
+
+.cpg-copy-btn:hover {
+  background-color: #333333 !important; /* slightly lighter black on hover */
+}
+
+.cpg-copy-btn:focus {
+  outline: 2px solid #2196f3 !important;
+  outline-offset: 2px !important;
+}
+
+.cpg-copy-btn:active {
+  background-color: #111111 !important;
+}
+
+/* Keep button black even in copied state */
+.cpg-copy-btn.wpcpg-copied {
+  background-color: #000000 !important; /* stay black */
+  color: #ffffff !important;
+}
+
+.cpg-copy-btn.wpcpg-copy-error {
+  background-color: #000000 !important; /* stay black */
+  color: #ffffff !important;
+}
+
+/* Success alert with green background */
+.cpg-copy-status {
+  background: #16a34a !important; /* clean green background */
+  color: #ffffff !important; /* white text */
+  font-weight: 600 !important;
+  padding: 10px 16px !important;
+  border-radius: 6px !important;
+  margin-top: 10px !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  box-shadow: 0 2px 8px rgba(22, 163, 74, 0.3) !important;
+  opacity: 1 !important;
+  transition: opacity 0.3s ease !important;
+  border: none !important;
+}
+
+.cpg-copy-status.show {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.cpg-copy-status.wpcpg-copy-error {
+  background-color: #000000 !important; /* stay black */
+  color: #ffffff !important;
+}
+
+.cpg-copy-status.error {
+  background: #dc2626 !important;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.3) !important;
+  color: #ffffff !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cpg-example-item {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  
+  /* Enhanced code block for better button alignment */
+.cpg-code-block {
+  display: flex;
+  align-items: center; /* center align items */
+  gap: 14px;
+  background: linear-gradient(135deg, #fafbff 0%, #ffffff 100%);
+  padding: 16px 18px;
+  border-radius: 10px;
+  border: 1px solid #e8edf7;
+  box-shadow: 0 2px 8px rgba(102,126,234,0.06);
+  transition: all 0.3s ease;
+  min-height: 52px; /* ensure consistent height */
+}
+
+.cpg-code-block code {
+  flex: 1;
+  background: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: #2c3338;
+  line-height: 1.4;
+  padding: 0;
+  border: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center; /* center the code text */
+}
+  .cpg-copy-btn {
+    padding: 8px 16px;
+    font-size: 11px;
+    min-width: 60px;
+    align-self: center;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cpg-code-block {
+    padding: 12px;
+    min-height: 48px;
+  }
+  
+  .cpg-code-block code {
+    font-size: 12px;
+  }
+  
+  .cpg-copy-btn {
+    padding: 6px 6px;
+    font-size: 10px;
+  }
+}
+
+
+/* ====== CLEAR CACHE STYLING ====== */
+.wpcpg-cache-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  padding: 16px 18px !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #f4f6fa 0%, #e9ecef 100%) !important;
+  border: 1px solid #e6e9f0 !important;
+  margin-bottom: 16px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+}
+
+.wpcpg-cache-card:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+}
+
+.wpcpg-cache-meta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+
+.wpcpg-cache-icon {
+  width: 32px !important;
+  height: 32px !important;
+  border-radius: 8px !important;
+  background: linear-gradient(135deg, #e9eefc 0%, #dbe3ff 100%) !important;
+  position: relative !important;
+  flex: 0 0 32px !important;
+  box-shadow: inset 0 0 0 1px rgba(86, 112, 255, 0.2) !important;
+}
+
+.wpcpg-cache-icon:before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 8px !important;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%235670ff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.36 4.36A9 9 0 0 1 3.51 15"></path></svg>') !important;
+  background-size: 16px 16px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  border: none !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+.wpcpg-cache-card:hover .wpcpg-cache-icon:before {
+  animation: refreshRotate 0.6s ease-in-out !important;
+}
+
+@keyframes refreshRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.wpcpg-cache-text strong {
+  display: block !important;
+  font-weight: 700 !important;
+  color: #2c3338 !important;
+  line-height: 1.1 !important;
+  font-size: 14px !important;
+}
+
+.wpcpg-cache-text span {
+  display: block !important;
+  color: #6b7280 !important;
+  font-size: 12px !important;
+  margin-top: 2px !important;
+}
+
+.wpcpg-clear-cache {
+  appearance: none !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  padding: 10px 18px !important;
+  background: linear-gradient(135deg, #2c3338 0%, #1e252b 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  letter-spacing: 0.3px !important;
+  cursor: pointer !important;
+  line-height: 1 !important;
+  box-shadow: 0 2px 8px rgba(44,51,56,0.2) !important;
+  transition: all 0.3s ease !important;
+}
+
+.wpcpg-clear-cache:hover {
+  background: linear-gradient(135deg, #1e252b 0%, #0f1419 100%) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(44,51,56,0.3) !important;
+}
+
+.wpcpg-clear-cache:disabled {
+  opacity: 0.6 !important;
+  cursor: default !important;
+  transform: none !important;
+}
+
+/* ====== INLINE NOTICES ====== */
+#wpcpg-admin-notices {
+  margin: 12px 0;
+}
+
+.wpcpg-notice {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 12px 16px !important;
+  border-radius: 10px !important;
+  background: linear-gradient(135deg, #e8f7ee 0%, #d1e7dd 100%) !important;
+  color: #0a5427 !important;
+  border: 1px solid #bee7c7 !important;
+  font-size: 14px !important;
+  box-shadow: 0 2px 8px rgba(10,84,39,0.1) !important;
+  margin-bottom: 12px !important;
+}
+
+.wpcpg-notice .wpcpg-close {
+  background: none;
+  border: 0;
+  font-size: 18px;
+  line-height: 1;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.wpcpg-notice .wpcpg-close:hover {
+  background: rgba(10,84,39,0.1);
+}
+
+.wpcpg-notice[data-type="error"] {
+  background: linear-gradient(135deg, #fff1f0 0%, #fdebea 100%) !important;
+  color: #842029 !important;
+  border-color: #fac6c3 !important;
+}
+
+/* ====== TOOL LINKS ====== */
+.cpg-tool-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #2c3338;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  margin-bottom: 8px;
+}
+
+.cpg-tool-link:hover {
+  background: linear-gradient(135deg, #2c3338 0%, #1e252b 100%);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(44, 51, 56, 0.2);
+  border-color: #2c3338;
+}
+
+/* Enhanced Gallery Preview Box */
+.cpg-preview-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+  padding: 20px;
+  background: linear-gradient(145deg, #ffffff, #f8faff);
+  border-radius: 16px;
+  border: 1px solid #e1e7f0;
+  box-shadow: 
+    0 12px 25px rgba(102, 126, 234, 0.12),
+    0 6px 12px rgba(66, 103, 178, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cpg-preview-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+  opacity: 0.7;
+}
+
+.cpg-preview-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    0 20px 40px rgba(102, 126, 234, 0.18),
+    0 10px 20px rgba(66, 103, 178, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Enhanced Preview Image */
+.cpg-preview-wrapper img {
+  max-width: 100%;
+  max-height: 280px;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.15),
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.4s ease;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(1px);
+}
+
+.cpg-preview-wrapper img:hover {
+  transform: scale(1.03);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.2),
+    0 8px 15px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+.cpg-preview-note {
+  font-size: 13px;
+  background: linear-gradient(135deg, #fff7e6 0%, #fef3c7 100%);
+  padding: 14px 16px;
+  border-radius: 10px;
+  color: #92400e;
+  border-left: 4px solid #f59e0b;
+  margin-top: 16px;
+  line-height: 1.4;
+}
+
+/* ====== MODAL DESIGN ====== */
+.wpcpg-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 999999 !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  display: none;
+}
+
+.wpcpg-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.wpcpg-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.wpcpg-modal-header {
+  padding: 20px 24px;
+  background: linear-gradient(135deg, #f8f9fb 0%, #f1f2f6 100%);
+  border-bottom: 1px solid #e7e7ea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wpcpg-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.wpcpg-modal-body {
+  padding: 24px;
+}
+
+/* Hide duplicate/conflicting modals */
+.cpg-modal:not(#wpcpg-help-modal) {
+  display: none !important;
+}
+
+.wpcpg-modal-body ol {
+  margin: 0 0 16px 20px;
+  color: #374151;
+}
+
+.wpcpg-modal-body li {
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
+.wpcpg-modal-body code {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+}
+
+.wpcpg-modal-body kbd {
+  background: #2c3338;
+  color: #ffffff;
+  border-radius: 6px;
+  padding: 2px 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.cpg-help-note {
+  background: linear-gradient(135deg, #fff7e6 0%, #fef3c7 100%);
+  border-left: 4px solid #f59e0b;
+  border-radius: 8px;
+  padding: 16px;
+  color: #92400e;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.cpg-help-example {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border-left: 4px solid #10b981;
+  border-radius: 8px;
+  padding: 16px;
+  color: #065f46;
+  margin-top: 16px;
+}
+
+.cpg-help-example h4 {
+  margin: 0 0 12px 0;
+  color: #065f46;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 1000px) {
+  .cpg-main-content {
+    flex-direction: column;
+    padding: 24px 20px 32px;
+    gap: 24px;
+  }
+  
+  .cpg-sidebar {
+    min-width: 0;
+    order: -1;
+  }
+  
+  .cpg-settings-panel,
+  .cpg-sidebar {
+    width: 100%;
+  }
+  
+  .cpg-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px 20px;
+    gap: 16px;
+  }
+  
+  .cpg-header-actions {
+    align-self: stretch;
+    justify-content: center;
+  }
+  
+  .cpg-columns-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .cpg-admin-container {
+    margin: 20px 10px;
+  }
+  
+  .cpg-main-content {
+    padding: 16px;
+  }
+  
+  .cpg-header {
+    padding: 20px 16px;
+  }
+  
+  .cpg-card-content {
+    padding: 16px;
+  }
+}
+
+/* ====== UTILITY CLASSES ====== */
+.wpcpg-success { 
+  color: #0a7d34 !important; 
+}
+
+.wpcpg-error { 
+  color: #b52727 !important; 
+}
+
+/* ====== PREVENT OVERFLOW ====== */
+html.wp-admin, 
+body.wp-admin { 
+  overflow-x: hidden; 
+}
+
+.cpg-admin-container .cpg-card:last-child,
+.cpg-sidebar .cpg-card:last-child,
+.cpg-settings-panel .cpg-card:last-child { 
+  margin-bottom: 0; 
+}
+
+.wrap > :last-child { 
+  margin-bottom: 0 !important; 
+}
+
+/* ====== ENFORCED OVERRIDES ====== */
+.wrap .cpg-card,
+.wrap .wpcpg-cache-card,
+.wrap .wpcpg-clear-cache {
+  border-radius: 12px !important;
+}
+
+.wrap .wpcpg-cache-card {
+  background: linear-gradient(135deg, #f4f6fa 0%, #e9ecef 100%) !important;
+  border: 1px solid #e6e9f0 !important;
+}
+
+.wrap .wpcpg-clear-cache {
+  background: linear-gradient(135deg, #2c3338 0%, #1e252b 100%) !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* ====== FORCE MODAL DISPLAY - MINIMAL OVERRIDE ====== */
+
+/* Ensure modal container shows */
+#wpcpg-help-modal.wpcpg-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 999999 !important;
+  pointer-events: auto !important;
+}
+
+/* When modal is shown */
+#wpcpg-help-modal[style*="block"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Force overlay and content to show */
+#wpcpg-help-modal .wpcpg-modal-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  pointer-events: auto !important;
+}
+
+#wpcpg-help-modal .wpcpg-modal-content {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  max-width: 600px !important;
+  width: 90% !important;
+  max-height: 80vh !important;
+  overflow: hidden !important;
+  z-index: 1000000 !important;
+  pointer-events: auto !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+}
+
+/* Hide any conflicting modals */
+.cpg-modal:not(#wpcpg-help-modal),
+#user-id-help-modal:not(#wpcpg-help-modal) {
+  display: none !important;
+}
+
+/* ====== MODAL FIXES - ENHANCED DISPLAY ====== */
+
+/* Ensure only our modal shows */
+#user-id-help-modal:not(#wpcpg-help-modal) {
+  display: none !important;
+}
+/* Force proper modal display */
+.wpcpg-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 999999 !important;
+  background: rgba(0, 0, 0, 0.75) !important;
+  display: none;
+}
+
+/* When jQuery shows the modal */
+.wpcpg-modal[style*="block"] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Modal content positioning */
+.wpcpg-modal-overlay {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  cursor: pointer;
+}
+
+.wpcpg-modal-content {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  max-width: 600px !important;
+  width: 90% !important;
+  max-height: 80vh !important;
+  overflow-y: auto !important;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
+  z-index: 1000000 !important;
+}
+
+/* ====== DUAL VALIDATION SYSTEM STYLING ====== */
+
+/* Client-side validation message (below input field) */
+.wpcpg-validation-msg {
+  font-size: 13px;
+  margin-top: 8px;
+  min-height: 18px;
+  padding: 6px 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wpcpg-validation-msg.success {
+  color: #00a32a;
+}
+
+.wpcpg-validation-msg.error {
+  color: #d63638;
+}
+
+.wpcpg-validation-msg .dashicons {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+/* Server-side validation messages (WordPress admin notices) */
+.notice-success {
+  border-left-color: #00a32a !important;
+  background: linear-gradient(135deg, #e8f7ee 0%, #d1e7dd 100%) !important;
+  box-shadow: 0 2px 8px rgba(0, 163, 42, 0.1) !important;
+}
+
+.notice-error {
+  border-left-color: #d63638 !important;
+  background: linear-gradient(135deg, #fff1f0 0%, #fdebea 100%) !important;
+  box-shadow: 0 2px 8px rgba(214, 54, 56, 0.1) !important;
+}
+
+/* Ensure proper spacing between validations */
+.cpg-input-group {
+  margin-bottom: 4px;
+}
+
+.cpg-field-desc {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ====== END OF ORIGINAL ADMIN.CSS ====== */
+
+
+/* ===================================================================
+   ADDITIONAL + UPDATED STYLES: Card Style previews and Shadow mapping
+   (Merged into admin.css; adjusts previews for circle/polaroid and
+   makes selected card reflect shadow selection via JS class names)
+   =================================================================== */
+
+/* Grid & option layout (keeps items aligned) */
+.toplevel_page_contributor-photo-gallery .cpg-style-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 14px;
+align-items: start;
+margin: 6px 0 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 980px) {
+.toplevel_page_contributor-photo-gallery .cpg-style-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 680px) {
+.toplevel_page_contributor-photo-gallery .cpg-style-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 420px) {
+.toplevel_page_contributor-photo-gallery .cpg-style-grid { grid-template-columns: 1fr; }
+}
+
+/* Accessible hide for native radio (visual hidden but keyboard focusable) */
+.toplevel_page_contributor-photo-gallery .cpg-style-option input[type="radio"] {
+position: absolute !important;
+width: 1px !important;
+height: 1px !important;
+padding: 0 !important;
+margin: -1px !important;
+overflow: hidden !important;
+clip: rect(0 0 0 0) !important;
+white-space: nowrap !important;
+border: 0 !important;
+opacity: 0 !important;
+pointer-events: none !important;
+}
+
+/* Card wrapper: consistent sizing & alignment */
+.toplevel_page_contributor-photo-gallery .cpg-style-option { position: relative; cursor: pointer; }
+.toplevel_page_contributor-photo-gallery .cpg-style-card {
+width: 100%;
+min-height: 128px;
+padding: 14px;
+border-radius: 12px;
+background: #fff;
+border: 1px solid rgba(226,232,240,1);
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 8px;
+box-sizing: border-box;
+transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+position: relative;
+overflow: visible;
+}
+
+/* thumbnail area */
+.toplevel_page_contributor-photo-gallery .cpg-style-preview {
+width: 64px;
+height: 64px;
+border-radius: 10px;
+background: linear-gradient(180deg,#eef3fb,#fff);
+border: 1px solid rgba(226,232,240,1);
+display: flex;
+align-items: center;
+justify-content: center;
+position: relative;
+overflow: hidden;
+}
+
+/* simulated photo inside thumbnail (keeps consistent look without real images) */
+.toplevel_page_contributor-photo-gallery .cpg-style-preview::before {
+content: "";
+display: block;
+width: 90%;
+height: 90%;
+border-radius: 8px;
+background-image: linear-gradient(135deg, #ffd1a6 0%, #e3a5e8 35%, #a6d8ff 100%);
+box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 6px 18px rgba(12,20,30,0.04);
+transition: transform .18s ease, border-radius .18s ease;
+}
+
+/* style-specific thumbnail shapes */
+
+/* circle */
+.toplevel_page_contributor-photo-gallery .cpg-style-card.cpg-style-circle .cpg-style-preview {
+width: 72px;
+height: 72px;
+border-radius: 999px;
+}
+.toplevel_page_contributor-photo-gallery .cpg-style-card.cpg-style-circle .cpg-style-preview::before {
+border-radius: 999px;
+transform: scale(1);
+}
+
+/* polaroid: use ::before on the card for the caption bar and keep preview rotated */
+.toplevel_page_contributor-photo-gallery .cpg-style-card.cpg-style-polaroid {
+padding-bottom: 18px;
+}
+.toplevel_page_contributor-photo-gallery .cpg-style-card.cpg-style-polaroid .cpg-style-preview {
+width: 74px;
+height: 74px;
+border-radius: 6px;
+transform: rotate(-3deg);
+box-shadow: 0 8px 24px rgba(10,20,30,0.06);
+}
+.toplevel_page_contributor-photo-gallery .cpg-style-card.cpg-style-polaroid .cpg-style-preview::before {
+border-radius: 4px;
+transform: rotate(0deg);
+box-shadow: none;
+}
+/* caption bar for polaroid: moved to ::before of the .cpg-style-card to avoid conflict with badge */
+
+
+/* fixed height preview (tall) */
+.toplevel_page_contributor-photo-gallery .cpg-style-card.cpg-style-fixed .cpg-style-preview {
+width: 60px;
+height: 88px;
+border-radius: 8px;
+}
+
+/* labels */
+.toplevel_page_contributor-photo-gallery .cpg-style-card .cpg-style-label {
+font-size: 13px;
+font-weight: 700;
+color: #0f1724;
+text-align: center;
+margin-top: 6px;
+}
+.toplevel_page_contributor-photo-gallery .cpg-style-card .cpg-style-desc {
+font-size: 12px;
+color: #6b7280;
+text-align: center;
+}
+
+/* hover and selected states (selected card gets elevated look) */
+.toplevel_page_contributor-photo-gallery .cpg-style-option:hover .cpg-style-card {
+transform: translateY(-4px);
+border-color: rgba(102,126,234,0.12);
+box-shadow: 0 8px 24px rgba(10,20,40,0.06);
+}
+.toplevel_page_contributor-photo-gallery .cpg-style-option.selected .cpg-style-card {
+transform: translateY(-8px);
+border-color: rgba(102,126,234,0.18);
+box-shadow: 0 18px 40px rgba(15,23,36,0.06);
+z-index: 2;
+}
+
+/* check badge — use ::after on the card (no clash now with polaroid caption) */
+.toplevel_page_contributor-photo-gallery .cpg-style-card::after {
+content: "";
+position: absolute;
+top: 10px;
+right: 10px;
+width: 30px;
+height: 30px;
+border-radius: 999px;
+display: none;
+align-items: center;
+justify-content: center;
+font-weight: 700;
+font-size: 12px;
+}
+.toplevel_page_contributor-photo-gallery .cpg-style-option.selected .cpg-style-card::after {
+display: flex;
+content: "✓";
+background: linear-gradient(90deg,#000000,#000000);
+color: #fff;
+box-shadow: 0 6px 18px rgba(59,130,246,0.16);
+}
+
+/* Shadow mapping — only apply to the currently selected style card */
+.toplevel_page_contributor-photo-gallery .cpg-style-option.selected .cpg-style-card.cpg-shadow-none {
+box-shadow: none !important;
+transform: none !important;
+}
+.toplevel_page_contributor-photo-gallery .cpg-style-option.selected .cpg-style-card.cpg-shadow-subtle {
+box-shadow: 0 2px 8px rgba(12,20,30,0.06) !important;
+}
+.toplevel_page_contributor-photo-gallery .cpg-style-option.selected .cpg-style-card.cpg-shadow-medium {
+box-shadow: 0 8px 20px rgba(12,20,30,0.10) !important;
+transform: translateY(-6px);
+}
+.toplevel_page_contributor-photo-gallery .cpg-style-option.selected .cpg-style-card.cpg-shadow-strong {
+box-shadow: 0 14px 40px rgba(12,20,30,0.16) !important;
+transform: translateY(-8px) scale(1.015);
+}
+
+/* Reset neutral shadows on all non-selected cards so only selected card shows mapped shadow */
+.toplevel_page_contributor-photo-gallery .cpg-style-card.cpg-shadow-none,
+.toplevel_page_contributor-photo-gallery .cpg-style-card.cpg-shadow-subtle,
+.toplevel_page_contributor-photo-gallery .cpg-style-card.cpg-shadow-medium,
+.toplevel_page_contributor-photo-gallery .cpg-style-card.cpg-shadow-strong {
+box-shadow: 0 2px 8px rgba(12,20,30,0.04);
+transform: none;
+}
+
+/* Drop-shadow picker visuals: pills + chips that visually match the shadow they represent */
+.toplevel_page_contributor-photo-gallery .cpg-shadow-picker {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 12px;
+align-items: start;
+margin-top: 8px;
+}
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option {
+display: flex;
+gap: 10px;
+align-items: center;
+padding: 12px;
+background: #fff;
+border-radius: 10px;
+border: 1px solid rgba(226,232,240,1);
+transition: box-shadow .15s ease, transform .12s ease, border-color .12s ease;
+cursor: pointer;
+}
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(10,20,40,0.06); }
+.toplevel_page_contributor-photo-gallery .cpg-shadow-chip {
+width: 56px;
+height: 40px;
+border-radius: 8px;
+background: #fff;
+border: 1px solid rgba(226,232,240,1);
+display: inline-block;
+box-sizing: border-box;
+}
+
+/* chips visualize their shadow */
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option.cpg-shadow-none .cpg-shadow-chip { box-shadow: none; }
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option.cpg-shadow-subtle .cpg-shadow-chip { box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option.cpg-shadow-medium .cpg-shadow-chip { box-shadow: 0 4px 14px rgba(0,0,0,0.16); }
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option.cpg-shadow-strong .cpg-shadow-chip { box-shadow: 0 10px 28px rgba(0,0,0,0.22); }
+
+/* selected shadow highlight for pill */
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option.selected {
+border-color: rgba(102,126,234,0.18);
+box-shadow: 0 10px 30px rgba(102,126,234,0.06);
+transform: translateY(-6px);
+}
+
+/* small labels inside shadow option */
+.toplevel_page_contributor-photo-gallery .cpg-shadow-info { font-size: 13px; color: #374151; }
+
+/* ensure preview consistency inside admin preview */
+#cpg-live-preview .cpg-gallery-grid.cpg-no-captions .cpg-photo-content { display: none !important; }
+
+/* --- Background Color: inline alignment --- */
+.toplevel_page_contributor-photo-gallery .cpg-color-group {
+display: flex;
+gap: 12px;
+align-items: center;
+margin: 6px 0 0;
+}
+.toplevel_page_contributor-photo-gallery .cpg-color-picker,
+.toplevel_page_contributor-photo-gallery .cpg-border-color-picker {
+width: 40px;
+height: 36px;
+border-radius: 8px;
+border: 1px solid rgba(216,220,230,1);
+padding: 2px;
+box-sizing: border-box;
+background: transparent;
+flex: 0 0 40px;
+}
+.toplevel_page_contributor-photo-gallery .cpg-color-text {
+height: 36px;
+padding: 6px 10px;
+border-radius: 8px;
+border: 1px solid rgba(226,232,240,1);
+width: 220px;
+font-size: 14px;
+color: #0f1724;
+}
+.toplevel_page_contributor-photo-gallery .cpg-color-reset {
+height: 36px;
+padding: 6px 12px;
+border-radius: 8px;
+border: 1px solid rgba(226,232,240,1);
+background: #fff;
+cursor: pointer;
+font-size: 14px;
+}
+
+/* Add a small gap below the group for helper text */
+.toplevel_page_contributor-photo-gallery .cpg-color-group + .cpg-field-desc {
+margin-top: 10px;
+}
+
+/* Fix: Border Style alignment and sizing (replace the previous .cpg-border-controls block)
+ Scoped to plugin admin page. Paste/merge this into assets/css/admin.css. */
+
+.toplevel_page_contributor-photo-gallery .cpg-border-controls {
+/* Use flexible row layout so controls align neatly and don't wrap awkwardly */
+display: flex;
+gap: 18px;
+align-items: center;
+flex-wrap: wrap; /* wrap on narrow screens */
+margin-top: 8px;
+}
+
+/* Each logical row (Style / Width / Color) becomes a compact inline block:
+ label on the left (fixed width) and control on the right. */
+.toplevel_page_contributor-photo-gallery .cpg-border-row {
+display: flex;
+flex-direction: row;
+align-items: center;
+gap: 10px;
+min-width: 0; /* allow children to shrink */
+box-sizing: border-box;
+}
+
+/* Keep labels concise and aligned */
+.toplevel_page_contributor-photo-gallery .cpg-border-row .cpg-control-label {
+display: inline-block;
+width: 78px;              /* fixed label column width */
+margin: 0;
+font-size: 13px;
+color: #374151;
+font-weight: 600;
+}
+
+/* Select / inputs occupy remaining space but don't overflow */
+.toplevel_page_contributor-photo-gallery .cpg-border-row .cpg-select-field {
+min-width: 120px;
+max-width: 220px;
+width: auto;
+height: 40px;
+padding: 8px 12px;
+border-radius: 10px;
+box-sizing: border-box;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
+
+/* Number input styling and px suffix inline */
+.toplevel_page_contributor-photo-gallery .cpg-border-row .cpg-number-input-group {
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.toplevel_page_contributor-photo-gallery .cpg-border-row input[type="number"],
+.toplevel_page_contributor-photo-gallery .cpg-border-row .cpg-number-input {
+width: 72px;
+height: 40px;
+padding: 8px 10px;
+border-radius: 10px;
+border: 1px solid rgba(226,232,240,1);
+box-sizing: border-box;
+text-align: left;
+font-size: 14px;
+}
+.toplevel_page_contributor-photo-gallery .cpg-border-row .cpg-input-suffix {
+color: #6b7280;
+font-size: 14px;
+margin-left: 4px;
+}
+
+/* Color swatch aligned with other controls */
+.toplevel_page_contributor-photo-gallery .cpg-border-row .cpg-border-color-picker {
+width: 40px;
+height: 40px;
+border-radius: 8px;
+border: 1px solid rgba(216,220,230,1);
+padding: 2px;
+box-sizing: border-box;
+flex: 0 0 auto;
+}
+
+/* On small screens stack each logical row vertically for clarity */
+@media (max-width: 520px) {
+.toplevel_page_contributor-photo-gallery .cpg-border-controls {
+  gap: 12px;
+}
+.toplevel_page_contributor-photo-gallery .cpg-border-row {
+  width: 100%;
+  justify-content: flex-start;
+}
+.toplevel_page_contributor-photo-gallery .cpg-border-row .cpg-control-label {
+  width: 110px;
+  flex-shrink: 0;
+}
+.toplevel_page_contributor-photo-gallery .cpg-border-row .cpg-select-field {
+  max-width: calc(100% - 120px);
+}
+}
+
+/* Ensure the select arrow doesn't overlap text in some browsers */
+.toplevel_page_contributor-photo-gallery .cpg-border-controls .cpg-select-field::-ms-expand {
+display: none;
+}
+
+/* Ensure the width of the whole control row doesn't wrap awkwardly */
+.toplevel_page_contributor-photo-gallery .cpg-border-controls {
+align-items: center;
+gap: 12px;
+}
+
+/* Range slider: keep the visual value badge stable and vertically centered */
+.toplevel_page_contributor-photo-gallery .cpg-range-value {
+min-width: 80px;
+text-align: center;
+font-weight: 700;
+color: #0f1724;
+padding: 10px 14px;
+border-radius: 10px;
+background: #2c3338;
+color: #fff;
+}
+
+/* Small tweak: ensure number input in border row has consistent height */
+.toplevel_page_contributor-photo-gallery .cpg-border-controls input[type="number"] {
+height: 40px;
+padding: 8px 10px;
+border-radius: 8px;
+box-sizing: border-box;
+}
+
+/* Make sure the select doesn't expand beyond its container on very small widths */
+@media (max-width: 420px) {
+.toplevel_page_contributor-photo-gallery .cpg-border-controls .cpg-select-field {
+  max-width: 100%;
+}
+}
+
+@media (max-width: 680px) {
+.toplevel_page_contributor-photo-gallery .cpg-border-controls {
+  grid-template-columns: 1fr 88px;
+  grid-auto-rows: auto;
+}
+}
+
+/* style dropdown / width input / px suffix */
+.toplevel_page_contributor-photo-gallery .cpg-border-controls .cpg-select-field {
+height: 40px;
+border-radius: 8px;
+padding: 8px 12px;
+font-size: 14px;
+}
+.toplevel_page_contributor-photo-gallery .cpg-border-controls input[type="number"] {
+width: 72px;
+height: 40px;
+padding: 8px 10px;
+border-radius: 8px;
+border: 1px solid rgba(226,232,240,1);
+font-size: 14px;
+box-sizing: border-box;
+}
+.toplevel_page_contributor-photo-gallery .cpg-border-controls .cpg-input-suffix {
+margin-left: 8px;
+color: #6b7280;
+font-size: 14px;
+}
+
+/* ensure color swatch in border row matches background color control height */
+.toplevel_page_contributor-photo-gallery .cpg-border-color-picker {
+width: 40px;
+height: 36px;
+border-radius: 8px;
+border: 1px solid rgba(216,220,230,1);
+padding: 2px;
+box-sizing: border-box;
+}
+
+/* helper text spacing */
+.toplevel_page_contributor-photo-gallery .cpg-border-controls + .cpg-field-desc {
+margin-top: 12px;
+}
+
+/* --- Drop Shadow: pill/card layout with chip + label --- */
+.toplevel_page_contributor-photo-gallery .cpg-shadow-picker {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 14px;
+margin-top: 10px;
+}
+@media (max-width: 980px) {
+.toplevel_page_contributor-photo-gallery .cpg-shadow-picker { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 680px) {
+.toplevel_page_contributor-photo-gallery .cpg-shadow-picker { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 420px) {
+.toplevel_page_contributor-photo-gallery .cpg-shadow-picker { grid-template-columns: 1fr; }
+}
+
+/* visual pill for each shadow option */
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option {
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+padding: 14px 12px;
+background: #fff;
+border-radius: 12px;
+border: 1px solid rgba(226,232,240,1);
+min-height: 108px;
+transition: box-shadow .15s ease, transform .12s ease, border-color .12s ease;
+cursor: pointer;
+position: relative;
+}
+
+/* hide native shadow radio while keeping it accessible */
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option input[type="radio"] {
+position: absolute !important;
+width: 1px !important;
+height: 1px !important;
+padding: 0 !important;
+margin: -1px !important;
+overflow: hidden !important;
+clip: rect(0 0 0 0) !important;
+white-space: nowrap !important;
+border: 0 !important;
+opacity: 0 !important;
+pointer-events: none !important;
+}
+
+/* chip visual on top */
+.toplevel_page_contributor-photo-gallery .cpg-shadow-chip {
+width: 72px;
+height: 46px;
+border-radius: 10px;
+background: #fff;
+border: 1px solid rgba(226,232,240,1);
+box-sizing: border-box;
+display: block;
+transition: box-shadow .15s ease, transform .12s ease;
+}
+
+/* chip shadow examples */
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option.cpg-shadow-none .cpg-shadow-chip { box-shadow: none; }
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option.cpg-shadow-subtle .cpg-shadow-chip { box-shadow: 0 1px 6px rgba(0,0,0,0.08); }
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option.cpg-shadow-medium .cpg-shadow-chip { box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option.cpg-shadow-strong .cpg-shadow-chip { box-shadow: 0 12px 36px rgba(0,0,0,0.16); }
+
+/* label under chip */
+.toplevel_page_contributor-photo-gallery .cpg-shadow-info {
+text-align: center;
+font-size: 13px;
+color: #374151;
+line-height: 1.2;
+max-width: 92%;
+}
+
+/* selected pill styling */
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option.selected {
+border-color: rgba(102,126,234,0.18);
+transform: translateY(-6px);
+box-shadow: 0 10px 30px rgba(102,126,234,0.06);
+outline: 0;
+}
+
+/* small check badge in pill top-right when selected */
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option.selected::after {
+content: "✓";
+position: absolute;
+top: 8px;
+right: 8px;
+width: 16px;
+height: 16px;
+border-radius: 999px;
+background: linear-gradient(90deg,#000000,#000000);
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+font-weight: 700;
+box-shadow: 0 6px 16px rgba(59,130,246,0.12);
+}
+
+/* ensure only selected style card shows mapped shadow (neutral default for others) */
+.toplevel_page_contributor-photo-gallery .cpg-style-card {
+box-shadow: 0 2px 8px rgba(12,20,30,0.04);
+transition: box-shadow .18s ease, transform .18s ease;
+}
+
+/* small helper: ensure preview consistency inside admin preview */
+#cpg-live-preview .cpg-gallery-grid.cpg-no-captions .cpg-photo-content { display: none !important; }
+
+/* Minimal admin styles for notice, modal and improved copy button state.
+ Keep these small and scoped so they don't clash with the WP admin UI.
+*/
+
+.wpcpg-notice-new-shortcode {
+  background: linear-gradient(180deg,#ffffff,#fbfdff);
+  border: 1px solid rgba(59,130,246,0.12);
+  padding: 14px;
+  border-radius: 10px;
+  margin: 16px 0;
+  box-shadow: 0 8px 30px rgba(12,20,30,0.04);
+}
+
+.wpcpg-notice-new-shortcode .wpcpg-notice-inner p {
+  margin: 6px 0 0;
+  color: #0f1724;
+  line-height: 1.45;
+}
+
+.wpcpg-notice-actions {
+  margin-top: 12px;
+}
+
+.wpcpg-notice-actions .button {
+  margin-right: 8px;
+}
+
+/* Copy button states */
+.cpg-shortcode-block { display: inline-flex; align-items: center; gap: 10px; }
+.cpg-copy-btn { min-width: 84px; }
+.cpg-copy-btn.is-copied { background: #10b981; color: #fff; border-color: rgba(16,185,129,0.15); box-shadow: 0 6px 18px rgba(16,185,129,0.12); }
+
+/* Simple modal styles */
+.wpcpg-modal { display: none; position: fixed; inset: 0; z-index: 99999; align-items: center; justify-content: center; }
+.wpcpg-modal-overlay { position: absolute; inset: 0; background: rgba(7,12,17,0.6); backdrop-filter: blur(2px); }
+.wpcpg-modal-panel { position: relative; width: 820px; max-width: calc(100% - 36px); background: #fff; border-radius: 8px; box-shadow: 0 30px 80px rgba(2,6,23,0.4); z-index: 2; overflow: hidden; }
+.wpcpg-modal-header { padding: 18px 20px; border-bottom: 1px solid rgba(0,0,0,0.06); display:flex; align-items:center; justify-content:space-between; }
+.wpcpg-modal-header h2 { margin: 0; font-size: 18px; }
+.wpcpg-modal-close { background: transparent; border: none; font-size: 22px; line-height:1; cursor: pointer; padding: 6px 10px; }
+.wpcpg-modal-body { padding: 20px; max-height: 60vh; overflow: auto; }
+.wpcpg-modal-footer { padding: 12px 20px; border-top: 1px solid rgba(0,0,0,0.04); text-align: right; }
+
+/* Important note & example box */
+.wpcpg-important-note { background: #fff7e6; border: 1px solid #ffecb5; padding: 12px; border-radius: 6px; margin-bottom: 12px; color: #6b4226; }
+.wpcpg-help-steps { margin: 12px 0; padding-left: 20px; }
+.wpcpg-code-inline { display: inline-block; background: #f4f5f7; padding: 6px 8px; border-radius: 6px; font-family: monospace; margin-top: 6px; }
+.wpcpg-example-box { background: #f0fff4; border: 1px solid #d1fae5; padding: 10px; margin-top: 12px; border-radius: 6px; color: #065f46; }
+
+/* Small responsive tweak */
+@media (max-width: 640px) {
+  .wpcpg-modal-panel { width: 96%; }
+}
+
+/* Admin styles — compact help modal, improved spacing and dismiss button alignment
+ Replace (or merge) into your existing admin.css. Focused on modal visual polish.
+*/
+
+/* ---------- Accessibility helpers ---------- */
+.screen-reader-text,
+#wpcpg-aria-live {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ---------- Notice (kept small) ---------- */
+.wpcpg-notice-new-shortcode {
+  background: linear-gradient(180deg,#ffffff,#fbfdff);
+  border: 1px solid rgba(59,130,246,0.10);
+  padding: 12px;
+  border-radius: 8px;
+  margin: 12px 0;
+  box-shadow: 0 6px 22px rgba(12,20,30,0.04);
+}
+.wpcpg-notice-new-shortcode .wpcpg-notice-inner p {
+  margin: 6px 0 0;
+  color: #0f1724;
+  line-height: 1.4;
+}
+.wpcpg-notice-actions { margin-top: 10px; }
+.wpcpg-notice-actions .button { margin-right: 8px; }
+
+/* Copy button states (small) */
+.cpg-shortcode-block { display: inline-flex; align-items: center; gap: 8px; }
+.cpg-copy-btn { min-width: 74px; font-size: 13px; padding: 6px 10px; }
+.cpg-copy-btn.is-copied { background: #10b981; color: #fff; border-color: rgba(16,185,129,0.12); box-shadow: 0 6px 18px rgba(16,185,129,0.10); }
+
+/* ---------- Compact Modal ---------- */
+.wpcpg-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* overlay */
+.wpcpg-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(7,12,17,0.55);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+/* Compact panel */
+.wpcpg-modal-panel.wpcpg-modal-compact {
+  position: relative;
+  width: 640px;
+  max-width: 100%;
+  max-height: calc(100vh - 64px);
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 26px 60px rgba(2,6,23,0.36);
+  z-index: 2;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* header */
+.wpcpg-modal-header.compact {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wpcpg-modal-header.compact h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* dismiss (small circle) */
+.wpcpg-modal-close {
+  background: transparent;
+  border: none;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  color: rgba(0,0,0,0.55);
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.wpcpg-modal-close:hover {
+  background: rgba(0,0,0,0.03);
+  color: rgba(0,0,0,0.85);
+}
+
+/* body */
+.wpcpg-modal-body.compact {
+  padding: 16px 18px;
+  overflow: auto;
+  box-sizing: border-box;
+  flex: 1 1 auto;
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* tighter list with numbered circles */
+.wpcpg-help-steps.compact {
+  margin: 12px 0 14px 0;
+  padding-left: 0;
+  counter-reset: wpcpg-step;
+}
+.wpcpg-help-steps.compact li {
+  list-style: none;
+  margin-bottom: 10px;
+  padding-left: 56px;
+  position: relative;
+  min-height: 28px;
+}
+.wpcpg-help-steps.compact li::before {
+  counter-increment: wpcpg-step;
+  content: counter(wpcpg-step);
+  position: absolute;
+  left: 16px;
+  top: 4px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #111827;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* code tokens, kbd and small verbs */
+.wpcpg-code-inline,
+.wpcpg-modal-body code,
+.wpcpg-inline-code {
+  display: inline-block;
+  background: #f4f5f7;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-size: 13px;
+  color: #0f1724;
+  border: 1px solid rgba(15,23,36,0.04);
+  margin-left: 8px;
+}
+
+/* small verb block for instructions lines */
+.wpcpg-verb { display: block; margin-top: 6px; color: #374151; }
+
+/* keyboard key style */
+.wpcpg-modal-body kbd {
+  display: inline-block;
+  padding: 4px 7px;
+  border-radius: 6px;
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
+  font-size: 12px;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.2);
+  margin-left: 6px;
+}
+
+/* example box compact */
+.wpcpg-example-box.compact {
+  background: #f0fff4;
+  border: 1px solid #d1fae5;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
+  color: #065f46;
+  font-size: 13px;
+}
+
+/* inline code tokens inside example */
+.wpcpg-example-box .wpcpg-inline-code {
+  background: rgba(255,255,255,0.9);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-size: 13px;
+  border: 1px solid rgba(6,95,70,0.06);
+  margin-left: 6px;
+}
+
+/* footer */
+.wpcpg-modal-footer.compact {
+  padding: 10px 16px;
+  border-top: 1px solid rgba(0,0,0,0.04);
+  text-align: right;
+  background: transparent;
+}
+.wpcpg-modal-footer.compact .button {
+  min-width: 88px;
+  padding: 7px 12px;
+}
+
+/* prevent background scroll when modal open */
+body.wpcpg-modal-open {
+  overflow: hidden;
+}
+
+/* responsive tweaks for small screens */
+@media (max-width: 680px) {
+  .wpcpg-modal-panel.wpcpg-modal-compact { width: 100%; }
+  .wpcpg-help-steps.compact li { padding-left: 48px; }
+  .wpcpg-help-steps.compact li::before { left: 10px; }
+}
+
+/* ====== SETUP NOTICE STYLING ====== */
+.cpg-setup-notice-wrapper {
+    margin: 20px 0;
+    padding: 0 20px;
+    position: relative;
+    z-index: 999999;
+}
+
+.cpg-setup-notice {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-left: 4px solid #2271b1;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    padding: 0;
+    margin: 0;
+    position: relative;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.2s ease;
+    /* Debug: Ensure visibility */
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Debug: Force notice to be visible */
+.cpg-setup-notice-wrapper {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Ensure notices appear in the right location */
+.wp-header-end + .cpg-setup-notice-wrapper,
+.wp-header-end + .cpg-shortcode-notice-wrapper {
+    margin-top: 0;
+}
+
+/* Position notices after admin header */
+#wpbody-content .cpg-setup-notice-wrapper:first-child,
+#wpbody-content .cpg-shortcode-notice-wrapper:first-child {
+    margin-top: 20px;
+}
+
+.cpg-setup-notice-content {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 16px;
+}
+
+.cpg-setup-notice-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background: #2271b1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.cpg-setup-notice-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+.cpg-setup-notice-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.cpg-setup-notice-text strong {
+    color: #1d2327;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.cpg-setup-notice-text span {
+    color: #646970;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.cpg-setup-notice-link {
+    color: #2271b1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 13px;
+    transition: color 0.15s ease;
+}
+
+.cpg-setup-notice-link:hover {
+    color: #135e96;
+    text-decoration: underline;
+}
+
+.cpg-setup-notice-dismiss {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    color: #646970;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.cpg-setup-notice-dismiss:hover {
+    background: #f0f0f1;
+    color: #1d2327;
+}
+
+.cpg-setup-notice-dismiss .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* ====== SHORTCODE NOTICE STYLING ====== */
+.cpg-shortcode-notice-wrapper {
+    margin: 20px 0;
+    padding: 0 20px;
+}
+
+.cpg-shortcode-notice {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-left: 4px solid #00a32a;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    padding: 0;
+    margin: 0;
+    position: relative;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.2s ease;
+}
+
+.cpg-shortcode-notice-content {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 16px;
+}
+
+.cpg-shortcode-notice-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background: #00a32a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.cpg-shortcode-notice-icon .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+.cpg-shortcode-notice-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.cpg-shortcode-notice-text strong {
+    color: #1d2327;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.cpg-shortcode-notice-text span {
+    color: #646970;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.cpg-shortcode-notice-text code {
+    background: #f6f7f7;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 12px;
+    color: #1d2327;
+    border: 1px solid #c3c4c7;
+}
+
+.cpg-shortcode-notice-dismiss {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 50%;
+    color: #646970;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.cpg-shortcode-notice-dismiss:hover {
+    background: #f0f0f1;
+    color: #1d2327;
+}
+
+.cpg-shortcode-notice-dismiss .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .cpg-setup-notice-wrapper,
+    .cpg-shortcode-notice-wrapper {
+        padding: 0 15px;
+        margin: 15px 0;
+    }
+    
+    .cpg-setup-notice-content,
+    .cpg-shortcode-notice-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px;
+        gap: 12px;
+    }
+    
+    .cpg-setup-notice-text,
+    .cpg-shortcode-notice-text {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .cpg-setup-notice-content,
+    .cpg-shortcode-notice-content {
+        padding: 12px;
+    }
+    
+    .cpg-setup-notice-text strong,
+    .cpg-shortcode-notice-text strong {
+        font-size: 13px;
+    }
+    
+    .cpg-setup-notice-text span,
+    .cpg-shortcode-notice-text span {
+        font-size: 12px;
+    }
+}
+
+/* ====== VALIDATION & STATUS STYLES ====== */
+.cpg-field-status {
+    margin-top: 8px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cpg-field-status.valid {
+    color: #00a32a;
+}
+
+.cpg-field-status.invalid {
+    color: #d63638;
+}
+
+.cpg-field-status .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* ====== LOADING & PREVIEW STATES ====== */
+.cpg-loading {
+    text-align: center;
+    padding: 20px;
+    color: #646970;
+}
+
+.cpg-loading .spinner {
+    margin-right: 8px;
+}
+
+.cpg-error {
+    text-align: center;
+    padding: 20px;
+    color: #d63638;
+    background: #fcf0f1;
+    border: 1px solid #f1a3a6;
+    border-radius: 4px;
+}
+
+.cpg-preview-error {
+    text-align: center;
+    padding: 15px;
+    color: #d63638;
+    background: #fcf0f1;
+    border: 1px solid #f1a3a6;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* ====== SAVE BUTTON FEEDBACK ====== */
+.cpg-btn-save {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.cpg-btn-save.saving {
+    background: #646970;
+    border-color: #646970;
+    cursor: not-allowed;
+}
+
+.cpg-btn-save.saved {
+    background: #00a32a;
+    border-color: #00a32a;
+    color: #fff;
+}
+
+.cpg-btn-save .spinner {
+    margin-right: 8px;
+}
+
+.cpg-btn-save .dashicons {
+    margin-right: 8px;
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* ====== RANGE SLIDER STYLES ====== */
+.cpg-range-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: #e5e5e5;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 10px 0;
+}
+
+.cpg-range-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2271b1;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cpg-range-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2271b1;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cpg-range-value {
+    width: 60px;
+    text-align: center;
+    padding: 4px 8px;
+    border: 1px solid #c3c4c7;
+    border-radius: 3px;
+    font-size: 13px;
+}
+
+/* ====== COLUMN SELECTOR STYLES ====== */
+.cpg-columns-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.cpg-column-option {
+    position: relative;
+    border: 2px solid #c3c4c7;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fff;
+    overflow: hidden;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cpg-column-option:hover {
+    border-color: #2271b1;
+    background: #f0f6fc;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(34, 113, 177, 0.1);
+}
+
+.cpg-column-option.selected {
+    border-color: #2271b1;
+    background: #f0f6fc;
+    box-shadow: 0 0 0 1px #2271b1, 0 2px 8px rgba(34, 113, 177, 0.15);
+}
+
+.cpg-column-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cpg-column-card {
+    padding: 20px 16px;
+    text-align: center;
+    width: 100%;
+}
+
+.cpg-column-label {
+    font-weight: 600;
+    color: #1d2327;
+    font-size: 14px;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.cpg-column-desc {
+    color: #646970;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cpg-columns-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 12px;
+    }
+    
+    .cpg-column-card {
+        padding: 16px 12px;
+    }
+    
+    .cpg-column-label {
+        font-size: 13px;
+    }
+    
+    .cpg-column-desc {
+        font-size: 11px;
+    }
+}
+
+/* ====== PREVIEW CARD STYLES ====== */
+.cpg-preview-card {
+    margin-bottom: 20px;
+}
+
+.cpg-preview-wrapper {
+    min-height: 200px;
+    border: 1px dashed #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    background: #f9f9f9;
+    margin: 15px 0;
+}
+
+.cpg-preview-note {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f0f6fc;
+    border-left: 4px solid #2271b1;
+    font-size: 13px;
+    color: #2c3338;
+}
+
+.cpg-preview-note code {
+    background: #fff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+}
+
+/* ====== RESPONSIVE ADJUSTMENTS ====== */
+@media (max-width: 768px) {
+    .cpg-columns-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 8px;
+    }
+    
+    .cpg-range-slider {
+        margin: 15px 0;
+    }
+    
+    .cpg-preview-wrapper {
+        min-height: 150px;
+        padding: 15px;
+    }
+}
+
+/* ====== CARD STYLE SELECTOR STYLES ====== */
+.cpg-style-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.cpg-style-option {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cpg-style-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cpg-style-card {
+    border: 2px solid #c3c4c7;
+    border-radius: 8px;
+    padding: 20px 16px;
+    text-align: center;
+    background: #fff;
+    transition: all 0.2s ease;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cpg-style-option:hover .cpg-style-card {
+    border-color: #2271b1;
+    background: #f0f6fc;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(34, 113, 177, 0.1);
+}
+
+.cpg-style-option input[type="radio"]:checked + .cpg-style-card,
+.cpg-style-option.selected .cpg-style-card {
+    border-color: #2271b1;
+    background: #f0f6fc;
+    box-shadow: 0 0 0 1px #2271b1, 0 2px 8px rgba(34, 113, 177, 0.15);
+}
+
+.cpg-style-preview {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Style-specific preview variations */
+.cpg-style-polaroid .cpg-style-preview {
+    transform: rotate(2deg);
+}
+
+.cpg-style-circle .cpg-style-preview {
+    border-radius: 50%;
+}
+
+.cpg-style-fixed .cpg-style-preview {
+    width: 50px;
+    height: 70px;
+}
+
+.cpg-style-label {
+    font-weight: 600;
+    color: #1d2327;
+    font-size: 14px;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.cpg-style-desc {
+    color: #646970;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+/* ====== SHADOW STYLE SELECTOR STYLES ====== */
+.cpg-shadow-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.cpg-shadow-option {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cpg-shadow-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.cpg-shadow-option label {
+    display: block;
+    cursor: pointer;
+}
+
+.cpg-shadow-chip {
+    width: 60px;
+    height: 40px;
+    background: #fff;
+    border-radius: 6px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid #c3c4c7;
+}
+
+/* Shadow variations */
+.cpg-shadow-subtle .cpg-shadow-chip {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+.cpg-shadow-medium .cpg-shadow-chip {
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+}
+
+.cpg-shadow-strong .cpg-shadow-chip {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
+
+.cpg-shadow-info {
+    text-align: center;
+}
+
+.cpg-shadow-label {
+    font-weight: 600;
+    color: #1d2327;
+    font-size: 14px;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.cpg-shadow-desc {
+    color: #646970;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.cpg-shadow-option:hover .cpg-shadow-chip {
+    border-color: #2271b1;
+    transform: translateY(-1px);
+}
+
+.cpg-shadow-option input[type="radio"]:checked + label .cpg-shadow-chip,
+.cpg-shadow-option.selected .cpg-shadow-chip {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 2px #2271b1;
+}
+
+/* ====== PREVIEW STYLING ====== */
+.cpg-preview-grid {
+    --cpg-card-bg: #ffffff;
+    --cpg-card-border: none;
+    --cpg-card-shadow: none;
+    --cpg-caption-color: #2c3338;
+}
+
+.cpg-preview-grid .cpg-photo-card {
+    background: var(--cpg-card-bg, #ffffff);
+    border: var(--cpg-card-bg, none);
+    box-shadow: var(--cpg-card-shadow, none);
+}
+
+.cpg-preview-grid .cpg-photo-content p {
+    color: var(--cpg-caption-color, #2c3338);
+}
+
+/* Preview card style variations */
+.cpg-preview-grid .cpg-photo-card.cpg-style-default {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cpg-preview-grid .cpg-photo-card.cpg-style-polaroid {
+    padding: 12px 12px 0;
+    border-radius: 4px;
+}
+
+.cpg-preview-grid .cpg-photo-card.cpg-style-polaroid .cpg-photo-image {
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.cpg-preview-grid .cpg-photo-card.cpg-style-polaroid .cpg-photo-content {
+    padding: 8px 4px 12px;
+    text-align: center;
+}
+
+.cpg-preview-grid .cpg-photo-card.cpg-style-circle {
+    background: transparent;
+    border: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+}
+
+.cpg-preview-grid .cpg-photo-card.cpg-style-circle .cpg-photo-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 14px;
+    position: relative;
+    box-shadow: var(--cpg-card-shadow, 0 1px 3px rgba(0,0,0,0.1));
+}
+
+.cpg-preview-grid .cpg-photo-card.cpg-style-circle .cpg-photo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    display: block;
+}
+
+.cpg-preview-grid .cpg-photo-card.cpg-style-circle .cpg-photo-content {
+    padding: 10px 0 0;
+    text-align: center;
+}
+
+.cpg-preview-grid .cpg-photo-card.cpg-style-fixed {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cpg-preview-grid .cpg-photo-card.cpg-style-fixed .cpg-photo-image {
+    height: 200px;
+    width: 100%;
+}
+
+/* Preview responsive adjustments */
+@media (max-width: 768px) {
+    .cpg-preview-grid .cpg-photo-card.cpg-style-circle .cpg-photo-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+
+/* Hover effects for selection options */
+.cpg-column-option:hover::before,
+.cpg-style-option:hover .cpg-style-card::before,
+.cpg-shadow-option:hover::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+    background: rgba(34, 113, 177, 0.1);
+    border-radius: 50%;
+    border: 2px solid rgba(34, 113, 177, 0.3);
+    opacity: 0.6;
+    transition: all 0.2s ease;
+}
+
+/* Selection state improvements */
+.cpg-column-option.selected,
+.cpg-style-option.selected .cpg-style-card,
+.cpg-shadow-option.selected {
+    border-color: #2271b1;
+    background: #f0f6fc;
+    box-shadow: 0 0 0 1px #2271b1, 0 2px 8px rgba(34, 113, 177, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Focus states for accessibility */
+.cpg-column-option:focus-within,
+.cpg-style-option:focus-within .cpg-style-card,
+.cpg-shadow-option:focus-within {
+    outline: 2px solid #2271b1;
+    outline-offset: 2px;
+}
+
+/* Enhanced hover states */
+.cpg-column-option:hover,
+.cpg-style-option:hover .cpg-style-card,
+.cpg-shadow-option:hover {
+    border-color: #2271b1;
+    background: #f0f6fc;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(34, 113, 177, 0.1);
+}
+
+/* Smooth transitions for all interactive elements */
+.cpg-column-option,
+.cpg-style-option,
+.cpg-shadow-option {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Improved visual hierarchy */
+.cpg-column-label,
+.cpg-style-label,
+.cpg-shadow-label {
+    font-weight: 600;
+    color: #1d2327;
+    font-size: 14px;
+    margin-bottom: 6px;
+    line-height: 1.3;
+    transition: color 0.2s ease;
+}
+
+.cpg-column-desc,
+.cpg-style-desc,
+.cpg-shadow-desc {
+    color: #646970;
+    font-size: 12px;
+    line-height: 1.4;
+    font-weight: 400;
+    transition: color 0.2s ease;
+}
+
+/* Enhanced card styling */
+.cpg-column-card,
+.cpg-style-card {
+    padding: 20px 16px;
+    text-align: center;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+/* Better spacing and layout */
+.cpg-columns-grid,
+.cpg-style-grid,
+.cpg-shadow-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .cpg-columns-grid,
+    .cpg-style-grid,
+    .cpg-shadow-options {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 12px;
+    }
+    
+    .cpg-column-card,
+    .cpg-style-card {
+        padding: 16px 12px;
+    }
+    
+    .cpg-column-label,
+    .cpg-style-label,
+    .cpg-shadow-label {
+        font-size: 13px;
+    }
+    
+    .cpg-column-desc,
+    .cpg-style-desc,
+    .cpg-shadow-desc {
+        font-size: 11px;
+    }
+}
+
+/* ====== CLEAN SELECTION INDICATORS (NO CHECKMARKS) ====== */
+/* Remove all existing checkmark styles and replace with clean black dots */
+
+.cpg-column-option.selected::before,
+.cpg-style-option.selected .cpg-style-card::before,
+.cpg-shadow-option.selected::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 16px;
+    height: 16px;
+    background: #000000;
+    border-radius: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cpg-column-option.selected::after,
+.cpg-style-option.selected .cpg-style-card::after,
+.cpg-shadow-option.selected::after {
+    content: "✓";
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 8px;
+    font-weight: 900;
+    z-index: 11;
+    line-height: 1;
+}
+
+/* Ensure containers are positioned */
+.cpg-column-option,
+.cpg-style-option .cpg-style-card,
+.cpg-shadow-option {
+    position: relative;
+    overflow: visible;
+}
+
+/* Remove conflicting old checkmark animation */
+@keyframes checkmark-fade-in {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ====== ENHANCED ADMIN PREVIEW CIRCLE STYLING ====== */
+#cpg-live-preview .cpg-photo-card.cpg-style-circle .cpg-photo-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 12px;
+    position: relative;
+    background: #f8f9fa;
+    box-shadow: 
+        0 4px 12px rgba(0,0,0,0.15),
+        0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#cpg-live-preview .cpg-photo-card.cpg-style-circle:hover .cpg-photo-image {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 
+        0 8px 24px rgba(0,0,0,0.2),
+        0 4px 8px rgba(0,0,0,0.15);
+}
+
+#cpg-live-preview .cpg-photo-card.cpg-style-circle .cpg-photo-image::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.8);
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+#cpg-live-preview .cpg-photo-card.cpg-style-circle .cpg-photo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    z-index: 2;
+    position: relative;
+}
+
+
+/* === Usage examples: modern and minimal === */
+.toplevel_page_contributor-photo-gallery .cpg-example-item {
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  transition: all 0.2s ease;
+  margin-bottom: 16px;
+}
+.toplevel_page_contributor-photo-gallery .cpg-example-item:hover {
+  border-color: #2271b1;
+  box-shadow: 0 2px 8px rgba(34, 113, 177, 0.1);
+  transform: translateY(-1px);
+}
+.toplevel_page_contributor-photo-gallery .cpg-example-header strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1d2327;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+  display: block;
+}
+.toplevel_page_contributor-photo-gallery .cpg-example-header small {
+  color: #646970;
+  font-size: 13px;
+  margin: 0 0 16px 0;
+  line-height: 1.4;
+  display: block;
+}
+.toplevel_page_contributor-photo-gallery .cpg-code-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+.toplevel_page_contributor-photo-gallery .cpg-code-block code {
+  flex: 1;
+  background: #f6f7f7;
+  border: 1px solid #dcdcde;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 13px;
+  color: #1d2327;
+  line-height: 1.4;
+  overflow-x: auto;
+  white-space: nowrap;
+  display: block;
+}
+.toplevel_page_contributor-photo-gallery .cpg-copy-btn {
+  background: #2271b1;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.toplevel_page_contributor-photo-gallery .cpg-copy-btn:hover {
+  background: #135e96;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(34, 113, 177, 0.2);
+}
+.toplevel_page_contributor-photo-gallery .cpg-copy-btn:active {
+  transform: translateY(0);
+}
+.toplevel_page_contributor-photo-gallery .cpg-copy-btn.copied {
+  background: #00a32a;
+}
+
+/* Ensure option boxes are positioned for the badge */
+.toplevel_page_contributor-photo-gallery .cpg-column-option,
+.toplevel_page_contributor-photo-gallery .cpg-style-option .cpg-style-card,
+.toplevel_page_contributor-photo-gallery .cpg-shadow-option {
+  position: relative;
+  overflow: hidden;
+}
