@@ -48,7 +48,7 @@ $caption_class = !$show_captions ? ' cpg-no-captions' : '';
 // Remove this line once confirmed working.
 echo '<!-- cpg: columns=' . esc_attr($columns) . ' -->';
 
-echo '<div class="cpg-gallery-grid columns-' . esc_attr($columns) . $caption_class . '" data-cpg-columns="' . esc_attr($columns) . '"' . $style_attr . '>';
+echo '<div class="cpg-gallery-grid columns-' . esc_attr($columns) . esc_attr ( $caption_class ) . '" data-cpg-columns="' . esc_attr($columns) . '"' . esc_attr( $style_attr ) . '>';
 
 foreach ($photos as $photo) {
     $image_url = '';

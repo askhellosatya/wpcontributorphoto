@@ -137,7 +137,7 @@ class CPG_Admin {
                     <div class="cpg-setup-notice-text">
                         <strong><?php esc_html_e( 'Contributor Photo Gallery', 'contributor-photo-gallery' ); ?>:</strong>
                         <span><?php esc_html_e( 'Ready to showcase your photo contributions?', 'contributor-photo-gallery' ); ?></span>
-                        <a href="<?php echo $settings_url; ?>" class="cpg-setup-notice-link"><?php esc_html_e( 'Complete Setup →', 'contributor-photo-gallery' ); ?></a>
+                        <a href="<?php echo esc_url( $settings_url ); ?>" class="cpg-setup-notice-link"><?php esc_html_e( 'Complete Setup →', 'contributor-photo-gallery' ); ?></a>
                     </div>
                     <button type="button" class="cpg-setup-notice-dismiss" aria-label="<?php esc_attr_e( 'Dismiss this notice', 'contributor-photo-gallery' ); ?>">
                         <span class="dashicons dashicons-no-alt"></span>
@@ -231,7 +231,7 @@ class CPG_Admin {
      */
     public function maybe_show_shortcode_notice() {
         // Only show on our settings page
-        if ( ! isset( $_GET['page'] ) || $_GET['page'] !== 'contributor-photo-gallery' ) {
+        if ( ! isset( $_GET['page'] ) || $_GET['page'] !== 'contributor-photo-gallery' ) { // phpcs:ignore
             return;
         }
 
