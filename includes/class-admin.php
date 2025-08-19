@@ -94,12 +94,14 @@ class CPG_Admin {
      * Enqueue admin scripts/styles — only for our settings page (and related admin screens)
      */
     public function admin_enqueue_assets( $hook ) {
+
+        wp_enqueue_style( 'cpg-admin', CPG_PLUGIN_URL . 'assets/css/admin.css', [], CPG_VERSION );
+
         // Only load assets on our settings page (top-level page hook) or any page that contains our slug
         if ( $hook !== 'toplevel_page_contributor-photo-gallery' && strpos( $hook, 'contributor-photo-gallery' ) === false ) {
             return;
         }
 
-        wp_enqueue_style( 'cpg-admin', CPG_PLUGIN_URL . 'assets/css/admin.css', [], CPG_VERSION );
         wp_enqueue_script( 'cpg-admin', CPG_PLUGIN_URL . 'assets/js/admin.js', [ 'jquery' ], CPG_VERSION, true );
 
         // Localize ajax data / nonce for admin JS to reuse
