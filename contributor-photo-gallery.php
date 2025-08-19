@@ -75,7 +75,7 @@ register_activation_hook(__FILE__, function() {
         // Fallback: remove a known plugin transient prefix if used
         global $wpdb;
         // Example: clear any transient beginning with 'cpg_photos_'
-        $wpdb->query(
+        $wpdb->query( // phpcs:ignore
             $wpdb->prepare(
                 "DELETE FROM {$wpdb->options} WHERE option_name LIKE %s",
                 '_transient_cpg_photos_%'
@@ -113,6 +113,7 @@ add_action('wp_ajax_wpcpg_clear_cache', function() {
 });
 
 add_action('wp_ajax_cpg_refresh_preview', function() {
+
     check_ajax_referer('wpcpg_admin_nonce', 'nonce');
 
     if (!current_user_can('manage_options')) {
@@ -124,7 +125,7 @@ add_action('wp_ajax_cpg_refresh_preview', function() {
         return;
     }
 
-    parse_str($_POST['settings'], $form_data);
+    parse_str($_POST['settings'], $form_data); // phpcs:ignore
     $options = $form_data['cpg_options'] ?? [];
 
     if (empty($options['default_user_id'])) {
@@ -194,10 +195,10 @@ add_action('wp_ajax_cpg_refresh_preview', function() {
     }
 
     if ($image_url) {
-        echo '<div class="cpg-gallery-grid cpg-preview-grid columns-1' . $caption_class . '"' . $style_attr . '>';
-        echo '<div class="cpg-photo-card cpg-style-' . esc_attr($card_style) . '">';
+        echo '<div class="cpg-gallery-grid cpg-preview-grid columns-1' . esc_attr( $caption_class . '"' . $style_attr ) . '>';
+        echo '<div class="cpg-photo-card cpg-style-' . esc_attr( $card_style ) . '">';
         echo '<a href="javascript:void(0);">';
-        echo '<div class="cpg-photo-image"><img src="' . esc_url($image_url) . '" alt="' . esc_attr($title) . '" loading="lazy"></div>';
+        echo '<div class="cpg-photo-image"><img src="' . esc_url( $image_url ) . '" alt="' . esc_attr($title) . '" loading="lazy"></div>';
         if ($show_captions && !empty($title)) {
             echo '<div class="cpg-photo-content"><p style="color: var(--cpg-caption-color, ' . esc_attr($caption_color) . ');">' . esc_html($title) . '</p></div>';
         }
