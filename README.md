@@ -175,7 +175,7 @@ If you want additional hooks added for deep customization, open an issue or PR a
 - Discussions: https://github.com/askhellosatya/contributor-photo-gallery/discussions
 
 Maintainers:
-- `askhellosatya` (repo maintainer)
+- [Satyam Vishwakarma (Satya)]() (repo maintainer)
 
 If you need commercial customization or priority support, contact the author: https://satyamvishwakarma.com
 
@@ -183,6 +183,6 @@ If you need commercial customization or priority support, contact the author: ht
 
 ## License
 
-Contributor Photo Gallery is licensed under the GPL v2 or later — see `LICENSE` file.
+Contributor Photo Gallery is licensed under the GPL v2 or later — see [LICENSE](LICENSE) file.
 
 ---
