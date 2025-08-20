@@ -3,9 +3,8 @@
 [![WordPress Plugin](https://img.shields.io/badge/WordPress-Plugin-blue.svg)](https://wordpress.org)
 [![Version](https://img.shields.io/badge/Version-2.5.0-green.svg)](https://github.com/askhellosatya/contributor-photo-gallery/releases)
 [![License](https://img.shields.io/badge/License-GPL%20v2%2B-red.svg)](https://www.gnu.org/licenses/gpl-2.0.html)
-
-Contributors: askhellosatya  
-Tags: gallery, photography, portfolio, wordpress, wordpress.org, contributor, photos, responsive, shortcode, image-gallery  
+  
+Tags: gallery, photography, portfolio, shortcode, responsive  
 Requires at least: 5.8  
 Tested up to: 6.8  
 Stable tag: 2.5.0
@@ -151,7 +150,7 @@ If you want additional hooks added for deep customization, open an issue or PR a
 
 ---
 
-## Changelog (high level)
+## Changelog
 
 ### 2.5.0 — 2025-08-16
 - Primary shortcode added: `[cp_gallery]`
@@ -164,7 +163,17 @@ If you want additional hooks added for deep customization, open an issue or PR a
 - Safe settings migration & preservation on upgrade
 - Minimum WP version: 5.8
 
-(See `readme.txt` for full backward changelog included in the plugin package.)
+(See [readme.txt](readme.txt) for full backward changelog included in the plugin package.)
+
+---
+
+## Contributors
+> *"The heartbeat of open source: You!"* ✨
+**Thanks to all who submitted code, fixed issues, or reviewed PRs**:
+
+<a href="https://github.com/askhellosatya/contributor-photo-gallery/graphs/contributors">
+  <img height="36px" src="https://contrib.rocks/image?repo=askhellosatya/contributor-photo-gallery"/>
+</a>
 
 ---
 
@@ -175,7 +184,7 @@ If you want additional hooks added for deep customization, open an issue or PR a
 - Discussions: https://github.com/askhellosatya/contributor-photo-gallery/discussions
 
 Maintainers:
-- `askhellosatya` (repo maintainer)
+- [Satyam Vishwakarma (Satya)]() (repo maintainer)
 
 If you need commercial customization or priority support, contact the author: https://satyamvishwakarma.com
 
@@ -183,6 +192,6 @@ If you need commercial customization or priority support, contact the author: ht
 
 ## License
 
-Contributor Photo Gallery is licensed under the GPL v2 or later — see `LICENSE` file.
+Contributor Photo Gallery is licensed under the GPL v2 or later — see [LICENSE](LICENSE) file.
 
 ---
