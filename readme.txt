@@ -9,7 +9,7 @@ Requires PHP: 7.4
 License: GPLv2 or later  
 License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
-Showcase your WordPress.org/photos contributions in fast, responsive, SEO-friendly galleries with professional card styles and flexible layout options.  
+Showcase your WordPress.org photo contributions in fast, responsive, SEO-friendly galleries with modern card styles.
 
 == Description ==
 
