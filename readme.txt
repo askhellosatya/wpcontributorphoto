@@ -1,205 +1,148 @@
-=== WP Contributor Photo Gallery ===
-Contributors: hellosatya
-Tags: wordpress.org, photo contributions, contributor gallery, photography showcase, portfolio
-Requires at least: 5.0
-Tested up to: 6.6
-Stable tag: 2.0.3
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+=== Contributor Photo Gallery ===
+Contributors: hellosatya, bhargavbhandari90  
+Tags: gallery, photography, portfolio, shortcode, responsive
+Donate link: https://paypal.me/hellosatya
+Requires at least: 5.8  
+Tested up to: 6.8  
+Stable tag: 2.5.0  
+Requires PHP: 7.4  
+License: GPLv2 or later  
+License URI: https://www.gnu.org/licenses/gpl-2.0.html  
 
-Showcase your photo contributions to WordPress.org/photos directory in beautiful responsive grids on your website.
+Showcase your WordPress.org/photos contributions in fast, responsive, SEO-friendly galleries with professional card styles and flexible layout options.  
 
 == Description ==
 
-**Transform your WordPress.org photo contributions into stunning portfolio galleries with professional design.**
+Showcase WordPress.org/photos contributions in fast, responsive, SEO-friendly galleries with professional card styles and flexible layouts.
 
-WP Contributor Photo Gallery helps photographers and WordPress community members showcase their photo contributions to the WordPress.org/photos directory on their own websites. Perfect for building professional portfolios, demonstrating community involvement, and getting recognition for your contributions.
+# Contributor Photo Gallery – Display, Customize & Share Your WordPress.org Photo Contributions  
 
-= 🌟 Why Showcase Your Contributions? =
+Contributor Photo Gallery is a modern WordPress plugin that turns your WordPress.org/photos contributions into elegant, responsive galleries.  
+Built for photographers, agencies, and community contributors, it makes your work shine while staying lightweight, accessible, and SEO-ready.  
 
-**Professional Benefits:**
-* Build credibility with visible proof of WordPress expertise
-* Enhance your portfolio with community contributions  
-* Demonstrate commitment to open source and community
-* Create SEO value with links back to WordPress.org
-* Professional photography-focused design interface
+Whether you’re building a portfolio, an about page, or a community profile, Contributor Photo Gallery helps you showcase your involvement beautifully — no coding required.  
 
-**Community Benefits:**
-* Inspire others to contribute photos to WordPress.org
-* Get recognition for your valuable contributions
-* Connect with other WordPress contributors
-* Share your WordPress community journey visually
+**Fast & Easy**: Create responsive photo galleries with a single shortcode.  
+**Multiple Styles**: Choose from Modern, Polaroid, Circle, or Fixed Height cards.  
+**Fully Customizable**: Adjust borders, shadows, backgrounds, and caption colors.  
+**Live Preview**: Style your gallery in the admin and see changes instantly.  
+**SEO & Accessibility**: Clean semantic HTML, alt attributes, and WCAG-friendly contrast.  
+**Performance-Minded**: Smart caching, lazy loading, and optimized API calls.  
+**Backwards Compatible**: Includes `[cp_gallery]` (new) and `[wpcontrib_photos]` (legacy).  
 
-= 📖 Easy Usage Examples =
+**Perfect for:**  
+- **Photographers** — build a professional portfolio using your WordPress.org photos.  
+- **Agencies & Professionals** — highlight team contributions on your site.  
+- **Community Members & Speakers** — add visual credibility to profiles and bios.  
 
-**Basic showcase** (uses your settings):
-`[wpcontrib_photos]`
+Lightweight, privacy-friendly, and compatible with any WordPress theme, Contributor Photo Gallery gives you the tools to showcase your WordPress.org photos with performance and polish.  
+  
 
-**Portfolio showcase** (professional portfolios):
-`[wpcontrib_photos per_page="20" columns="4"]`
+## New in v2.5.0  
+- Primary shortcode: `[cp_gallery]` (recommended).  
+- Legacy shortcode `[wpcontrib_photos]` preserved for compatibility.  
+- Caption text color option with live admin preview.  
+- New gallery styles: Polaroid, Circle, Fixed Height.  
+- Advanced card customization: borders, backgrounds, shadows.  
+- Auto-refresh preview (removed manual refresh button).  
+- Smooth settings migration to keep existing configurations.  
+- Minimum WordPress version updated to 5.8.  
 
-**About page integration** (personal branding):
-`[wpcontrib_photos per_page="12" columns="3"]`
+== Shortcodes ==
 
-**Blog post enhancement** (content creation):
-`[wpcontrib_photos per_page="6" columns="2"]`
+**Primary Shortcode:**  
+`[cp_gallery]`  
 
-**Sidebar widget** (ongoing showcase):
-`[wpcontrib_photos per_page="4" columns="1"]`
+Examples:  
+- `[cp_gallery]` — uses saved settings.  
+- `[cp_gallery per_page="12" columns="3"]`  
+- `[cp_gallery per_page="20" columns="4" user_id="21053005"]`  
 
-= ⚙️ Professional Configuration =
+**Legacy Shortcode:**  
+- `[wpcontrib_photos]` — fully supported, calls the same handler as `[cp_gallery]`.  
 
-**Essential Settings:**
-* WordPress.org User ID configuration with step-by-step guide
-* Photos per gallery: 1-50 (recommended: 12 for portfolio, 20-24 for showcase)
-* Grid layout: 1-6 columns with visual preview cards
-* Real-time validation and helpful guidance
-
-**Display & Performance:**
-* Cache duration: 5 minutes to 24 hours (recommended: 1 hour)
-* Link behavior: Open in new tab (recommended) or same tab
-* Photo descriptions: Show/hide with 30-character truncation
-* Lazy loading: Enable for better page performance
-
-= 🏆 Key Features =
-
-**Professional Design:**
-* Clean, photography-focused interface respecting open-source values
-* Responsive grid layouts that adapt to any design
-* High-quality image preview with optimized loading
-* Subtle hover effects for enhanced user experience
-
-**Enhanced Admin Experience:**
-* Copy-to-clipboard for quick shortcode access
-* Interactive User ID help with step-by-step instructions
-* Range sliders and toggle switches for better UX
-* Live preview showing exactly how your gallery will look
-
-**Performance Optimized:**
-* Smart caching with configurable duration
-* Lazy loading for faster page speeds
-* Optimized API calls to WordPress.org
-* Mobile-responsive design for all devices
-
-**Developer Friendly:**
-* Works with any page builder supporting shortcodes
-* Clean CSS classes for easy customization
-* Well-structured, maintainable codebase
-* Accessibility features with proper contrast
-
-= 🎯 Perfect For =
-
-**WordPress Photographers**: Showcase contributions alongside commercial work in professional portfolios
-
-**WordPress Professionals**: Demonstrate diverse community involvement beyond code contributions  
-
-**Content Creators**: Add authentic visual elements to WordPress-related content
-
-**Community Members**: Share your WordPress journey and build connections with other contributors
+**Attributes:**  
+- `per_page` — photos per page (1–50). Example: `per_page="12"`  
+- `columns` — grid columns (1–6). Example: `columns="3"`  
+- `user_id` — override saved WordPress.org numeric user ID. Example: `user_id="21053005"`  
 
 == Installation ==
 
-1. Install through **Plugins → Add New** or upload manually
-2. Activate the plugin
-3. Go to **WP Contributor Photo Gallery** in your admin menu (main menu item for easy access)
-4. Enter your WordPress.org User ID (see guide below)
-5. Configure your preferred gallery layout and settings
-6. Use `[wpcontrib_photos]` shortcode anywhere on your site
+1. Upload the plugin folder to `/wp-content/plugins/contributor-photo-gallery/` or install via the Plugin Installer.  
+2. Activate the plugin through the "Plugins" menu.  
+3. Go to **Settings → Contributor Photo Gallery** and enter your WordPress.org numeric User ID.  
+4. Adjust styling (card style, borders, shadow, caption color) and save.  
+5. Add `[cp_gallery]` (or `[wpcontrib_photos]`) to any page, post, or widget.  
 
 == Frequently Asked Questions ==
 
-= What is this plugin for? =
+= How do I find my WordPress.org User ID? =  
+1. Visit: `https://wordpress.org/photos/author/YOUR-USERNAME/`  
+2. Right-click → "View Source."  
+3. Search for `wp-json/wp/v2/users/`.  
+4. The numeric ID following the endpoint is your User ID.  
 
-This plugin displays the photos you've contributed to wordpress.org/photos on your own WordPress website. It's perfect for showcasing your community involvement and building professional portfolios with beautiful, responsive galleries.
+= Will my settings be preserved when I update? =  
+Yes. Settings are stored in a single option (`cpg_options`) and preserved during updates. v2.5.0 also migrates common legacy option keys.  
 
-= How do I find my WordPress.org User ID? =
+= Can I style the gallery with CSS? =  
+Yes. The plugin outputs predictable CSS classes like:  
+- `.cpg-gallery-grid`  
+- `.cpg-photo-card`  
+- `.cpg-photo-content`  
 
-Your User ID is a number (like 21053005), not your username. Follow these steps:
+These can be targeted for custom styling in your theme.  
 
-1. Visit https://wordpress.org/photos/author/YOUR-USERNAME/ (replace YOUR-USERNAME)
-2. Right-click and select "View page source" 
-3. Press Ctrl+F (Cmd+F on Mac) and search for "users/"
-4. Look for: wp-json/wp/v2/users/12345678
-5. The number (12345678) is your User ID
-
-The plugin includes a detailed step-by-step guide with interactive help.
-
-= Can I customize the gallery appearance? =
-
-Yes! Version 2.0.3 includes professional styling with multiple layout options:
-- Choose 1-6 columns for different contexts
-- Control photo descriptions and truncation
-- Adjust cache duration for performance
-- Customize link behavior (new tab/same tab)
-
-All elements use `wpcontrib-` CSS prefixes for easy custom styling.
-
-= Will this help my SEO and professional credibility? =
-
-Absolutely! The plugin creates proper links back to your WordPress.org contributions, improving your professional credibility and search engine presence. It's perfect for demonstrating your involvement in the WordPress community.
-
-= Does it work with page builders? =
-
-Yes! The shortcode works with all major page builders:
-- Gutenberg blocks
-- Elementor  
-- Divi Builder
-- Beaver Builder
-- Any builder supporting shortcodes
-
-= How does the caching work? =
-
-The plugin includes smart caching (5 minutes to 24 hours) to ensure fast loading while keeping your gallery updated. You can manually clear the cache anytime from the admin panel.
+= Will this plugin slow down my site? =  
+No. Contributor Photo Gallery is performance-optimized with:  
+- Smart caching (configurable between 5 minutes–24 hours).  
+- Lazy loading for images.  
+- Efficient API usage and lightweight markup.  
 
 == Screenshots ==
 
-1. Professional admin interface with User ID configuration and real-time validation
-2. Enhanced gallery preview showing 2 high-quality images with clean layout
-3. Copy-to-clipboard shortcode examples for different use cases
-4. Stylish Tools & Resources panel with gradients and animations
-5. Responsive gallery display on frontend with hover effects
-6. Mobile-optimized admin interface and gallery presentation
+1. Admin settings page with live preview and styling options.  
+2. Card styles: Modern, Polaroid, Circle, Fixed Height.  
+3. Border and color customization controls.  
+4. Shadow presets with visual selector.  
+5. Caption text color option in action.  
+6. Responsive gallery display (mobile and desktop).  
 
 == Changelog ==
 
-= 2.0.3 =
-* **Updated Shortcode**: Changed from `[wporg_photos]` to `[wpcontrib_photos]` for consistency
-* **Fixed Security Issues**: Enhanced input sanitization and proper nonce handling
-* **Text Domain Compliance**: Fixed text domain mismatches for WordPress.org standards
-* **Improved Cache Management**: Better cache clearing using WordPress native functions
-* **Enhanced Performance**: Optimized database queries and caching mechanisms
+= 2.5.0 - 2025-08-16 =  
+* New shortcode: `[cp_gallery]`.  
+* Legacy shortcode `[wpcontrib_photos]` preserved.  
+* Caption text color option with live preview.  
+* New gallery styles: Polaroid, Circle, Fixed Height, Modern.  
+* Advanced card customization (backgrounds, borders, shadows).  
+* Admin fixes: border select overflow, polaroid badge, shadow mapping.  
+* Auto-refresh preview; removed manual refresh button.  
+* Safe settings migration to preserve prior values.  
+* Minimum WordPress version bumped to 5.8.  
 
-= 2.0.0 =
-* **Major UI/UX Overhaul**: Complete redesign with photography-focused, professional interface
-* **Enhanced Admin Layout**: 65%-35% layout split for optimal space utilization
-* **Fixed Layout Issues**: Resolved overflow problems for consistent responsive experience
-* **Improved Gallery Preview**: Limited to 2 high-quality images with 30-character caption truncation
-* **Copy-to-Clipboard**: Quick access to shortcode examples for different use cases
-* **Stylish Tools Panel**: Enhanced Resources section with gradients, animations, and icons
-* **Better Form Controls**: Range sliders, toggle switches, and interactive elements
-* **Real-time Validation**: Instant feedback for User ID configuration with helpful guidance
-* **Updated Admin Menu**: Changed to "WP Contributor Photo Gallery" with clearer camera icon
-* **Mobile Optimization**: Enhanced responsive design for all screen sizes
-* **Accessibility Improvements**: Better color contrast and screen reader support
-* **Performance Optimization**: Code cleanup and faster loading throughout
+= 2.0.3 =  
+* Security improvements and caching refinements.  
 
-= 1.0.0 =
-* Initial release with basic photo gallery functionality
-* WordPress.org User ID configuration and validation
-* Responsive grid layouts and customization options
-* Smart caching and performance features
+= 2.0.0 =  
+* Major UI/UX overhaul, responsive grids, live preview, performance updates.  
+
+= 1.0.0 =  
+* Initial release with gallery fetch from WordPress.org/photos.  
 
 == Upgrade Notice ==
 
-= 2.0.3 =
-Important update: Shortcode changed to [wpcontrib_photos]. Please update your existing shortcodes. Enhanced security, WordPress.org compliance, and performance improvements included.
+= 2.5.0 =  
+New `[cp_gallery]` shortcode with fresh styling and customization options. Legacy `[wpcontrib_photos]` still works — all your settings are safe.  
 
 == Support ==
 
-**Support & Development:**
-* 📖 Documentation: [GitHub Wiki](https://github.com/askhellosatya/wpcontributorphoto/wiki)
-* 💬 Community Support: [GitHub Discussions](https://github.com/askhellosatya/wpcontributorphoto/discussions)
-* 🐛 Report Issues: [GitHub Issues](https://github.com/askhellosatya/wpcontributorphoto/issues)
-* 📸 WordPress.org Photos: [Contribute Photos](https://wordpress.org/photos/)
+- Documentation: https://github.com/askhellosatya/contributor-photo-gallery/wiki  
+- Issues: https://github.com/askhellosatya/contributor-photo-gallery/issues  
+- Discussions: https://github.com/askhellosatya/contributor-photo-gallery/discussions  
 
-**Developer**: [Satyam Vishwakarma](https://satyamvishwakarma.com) - WordPress Consultant & Community Contributor
+For commercial support, contact: [Satyam Vishwakarma](https://satyamvishwakarma.com)  
+
+== License ==  
+
+This plugin is licensed under the GPL v2 or later. See the [LICENSE](https://www.gnu.org/licenses/gpl-2.0.html) for details.  
