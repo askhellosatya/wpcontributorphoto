@@ -179,7 +179,9 @@ class CPG_Admin {
             <p>
                 <strong><?php esc_html_e( 'Contributor Photo Gallery', 'contributor-photo-gallery' ); ?>:</strong>
                 <?php esc_html_e( 'Ready to showcase your photo contributions?', 'contributor-photo-gallery' ); ?>
-                <a class="button button-primary" href="<?php echo $settings_url; ?>"><?php esc_html_e( 'Complete Setup', 'contributor-photo-gallery' ); ?></a>
+                <a class="button button-primary" href="<?php echo esc_url( $settings_url ); ?>">
+    <?php esc_html_e( 'Complete Setup', 'contributor-photo-gallery' ); ?>
+</a>
             </p>
         </div>
         <script type="text/javascript">
