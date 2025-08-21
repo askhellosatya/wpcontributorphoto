@@ -133,7 +133,7 @@ No. Contributor Photo Gallery is performance-optimized with:
 == Upgrade Notice ==
 
 = 2.5.0 =  
-New `[cp_gallery]` shortcode introduced. Existing `[wpcontrib_photos]` continues to work. Settings preserved during upgrade.  
+New `[cp_gallery]` shortcode with fresh styling and customization options. Legacy `[wpcontrib_photos]` still works — all your settings are safe.  
 
 == Support ==
 
