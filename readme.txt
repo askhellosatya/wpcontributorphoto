@@ -1,5 +1,5 @@
 === Contributor Photo Gallery ===
-Contributors: hellosatya
+Contributors: hellosatya, bhargavbhandari90
 Tags: gallery, photography, portfolio, shortcode, responsive
 Requires at least: 5.8
 Tested up to: 6.8
