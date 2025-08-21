@@ -25,12 +25,12 @@ class CPG_Frontend {
             .cpg-gallery-grid.columns-6 { grid-template-columns: repeat(6, 1fr); }
 
             /* More specific fallback in case theme uses generic image/grid rules */
-            body .cpg-gallery-grid.columns-1 { display: grid !important; grid-template-columns: repeat(1,1fr) !important; }
-            body .cpg-gallery-grid.columns-2 { display: grid !important; grid-template-columns: repeat(2,1fr) !important; }
-            body .cpg-gallery-grid.columns-3 { display: grid !important; grid-template-columns: repeat(3,1fr) !important; }
-            body .cpg-gallery-grid.columns-4 { display: grid !important; grid-template-columns: repeat(4,1fr) !important; }
-            body .cpg-gallery-grid.columns-5 { display: grid !important; grid-template-columns: repeat(5,1fr) !important; }
-            body .cpg-gallery-grid.columns-6 { display: grid !important; grid-template-columns: repeat(6,1fr) !important; }
+            body .cpg-gallery-grid.columns-1 { display: grid !important; grid-template-columns: repeat(1,1fr) }
+            body .cpg-gallery-grid.columns-2 { display: grid !important; grid-template-columns: repeat(2,1fr) }
+            body .cpg-gallery-grid.columns-3 { display: grid !important; grid-template-columns: repeat(3,1fr) }
+            body .cpg-gallery-grid.columns-4 { display: grid !important; grid-template-columns: repeat(4,1fr) }
+            body .cpg-gallery-grid.columns-5 { display: grid !important; grid-template-columns: repeat(5,1fr) }
+            body .cpg-gallery-grid.columns-6 { display: grid !important; grid-template-columns: repeat(6,1fr) }
 
             /* Small responsive fallback: ensure single column on very small screens */
             @media (max-width: 480px) {

@@ -170,7 +170,7 @@
 }
 
 @media (max-width: 480px) {
-    .cpg-photo-card.cpg-style-circle .cpg-photo-image {
+    body .cpg-gallery-grid .cpg-photo-card.cpg-style-circle .cpg-photo-image {
         width: 120px;
         height: 120px;
     }
@@ -238,8 +238,8 @@
 /* ====== HIGH SPECIFICITY CIRCLE FIXES (kept but refined) ====== */
 /* These stronger selectors remain to guard against theme overrides but are less invasive */
 .cpg-gallery-grid .cpg-photo-card.cpg-style-circle .cpg-photo-image {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: auto;
     border-radius: 50%;
     overflow: visible;
     position: relative;
