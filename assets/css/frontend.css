@@ -4,9 +4,9 @@
 */
 
 /* ====== BASE GALLERY GRID ====== */
-.cpg-gallery-grid { 
-    display: grid; 
-    gap: 1.5rem; 
+.cpg-gallery-grid {
+    display: grid;
+    gap: 1.5rem;
     padding: 1rem 0;
 }
 
@@ -18,13 +18,13 @@
     border-radius: 8px;
     overflow: hidden;
     border: var(--cpg-card-border, 1px solid #e5e5e5);
-    box-shadow: var(--cpg-card-shadow, 0 1px 3px rgba(0,0,0,0.1));
+    box-shadow: var(--cpg-card-shadow, 0 1px 3px rgba(0, 0, 0, 0.1));
     transition: all 0.3s ease;
 }
 
 .cpg-photo-card.cpg-style-default:hover {
     transform: translateY(-2px);
-    box-shadow: var(--cpg-card-shadow-hover, 0 4px 12px rgba(0,0,0,0.15));
+    box-shadow: var(--cpg-card-shadow-hover, 0 4px 12px rgba(0, 0, 0, 0.15));
 }
 
 /* Polaroid Style */
@@ -33,13 +33,13 @@
     padding: 12px 12px 0;
     border-radius: 4px;
     border: var(--cpg-card-border, 1px solid #e5e5e5);
-    box-shadow: var(--cpg-card-shadow, 0 2px 8px rgba(0,0,0,0.1));
+    box-shadow: var(--cpg-card-shadow, 0 2px 8px rgba(0, 0, 0, 0.1));
     transition: all 0.3s ease;
 }
 
 .cpg-photo-card.cpg-style-polaroid:hover {
     transform: translateY(-3px) rotate(1deg);
-    box-shadow: var(--cpg-card-shadow-hover, 0 6px 20px rgba(0,0,0,0.15));
+    box-shadow: var(--cpg-card-shadow-hover, 0 6px 20px rgba(0, 0, 0, 0.15));
 }
 
 .cpg-photo-card.cpg-style-polaroid .cpg-photo-image {
@@ -85,9 +85,10 @@
     height: 200px;
     position: relative;
     border-radius: 50%;
-    overflow: visible; /* allow pseudo-element ring to sit outside */
+    overflow: visible;
+    /* allow pseudo-element ring to sit outside */
     box-shadow: none;
-    transition: transform 260ms cubic-bezier(.2,.9,.2,1), box-shadow 260ms ease;
+    transition: transform 260ms cubic-bezier(.2, .9, .2, 1), box-shadow 260ms ease;
     flex-shrink: 0;
     margin: 0 auto 14px;
     display: block;
@@ -105,8 +106,10 @@
     width: calc(100% + 12px);
     height: calc(100% + 12px);
     border-radius: 50%;
-    border: 3px solid rgba(59,130,246,0.10); /* soft accent ring (tune via CSS variable if needed) */
-    box-shadow: 0 10px 28px rgba(12,20,30,0.06); /* soft outer shadow */
+    border: 3px solid rgba(59, 130, 246, 0.10);
+    /* soft accent ring (tune via CSS variable if needed) */
+    box-shadow: 0 10px 28px rgba(12, 20, 30, 0.06);
+    /* soft outer shadow */
     pointer-events: none;
     z-index: 1;
     box-sizing: border-box;
@@ -141,7 +144,7 @@
 .cpg-photo-card.cpg-style-circle:focus-within .cpg-photo-image {
     transform: translateY(-6px);
     /* slightly stronger shadow on hover for depth */
-    box-shadow: 0 12px 34px rgba(12,20,30,0.08);
+    box-shadow: 0 12px 34px rgba(12, 20, 30, 0.08);
 }
 
 /* caption container for circle style */
@@ -170,31 +173,35 @@
 }
 
 @media (max-width: 480px) {
-    .cpg-photo-card.cpg-style-circle .cpg-photo-image {
+    body .cpg-gallery-grid .cpg-photo-card.cpg-style-circle .cpg-photo-image {
         width: 120px;
         height: 120px;
     }
 }
 
 /* ====== COMMON STYLES ====== */
-.cpg-photo-image img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+.cpg-photo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.cpg-photo-content { 
-    padding: 1rem; 
+.cpg-photo-content {
+    padding: 1rem;
 }
 
 /* Updated caption typography for a cleaner, modern and slightly bolder look */
-.cpg-photo-content p { 
-    margin: 0; 
-    font-size: 15px; 
+.cpg-photo-content p {
+    margin: 0;
+    font-size: 15px;
     color: var(--cpg-caption-color, #2c3338);
     font-weight: 600;
     line-height: 1.4;
     text-align: center;
+}
+
+.columns-6 .cpg-photo-content p {
+    font-size: 11px;
 }
 
 /* Hide captions when disabled */
@@ -202,12 +209,12 @@
     display: none !important;
 }
 
-.cpg-photos-error { 
-    padding: 1rem; 
-    background: #fff3cd; 
-    border: 1px solid #f0ad4e; 
-    border-radius: 8px; 
-    color: #856404; 
+.cpg-photos-error {
+    padding: 1rem;
+    background: #fff3cd;
+    border: 1px solid #f0ad4e;
+    border-radius: 8px;
+    color: #856404;
 }
 
 /* ====== RESPONSIVE DESIGN ====== */
@@ -215,13 +222,32 @@
     .cpg-gallery-grid {
         gap: 1rem;
     }
-    
+
     .cpg-photo-card.cpg-style-fixed .cpg-photo-image {
         height: 150px;
     }
-    
+
     .cpg-photo-card.cpg-style-polaroid {
         padding: 8px 8px 0;
+    }
+
+    body .cpg-gallery-grid.columns-6 {
+        grid-template-columns: repeat(4, 1fr) !important;
+    }
+
+    body .cpg-gallery-grid.columns-5,
+    body .cpg-gallery-grid.columns-4 {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+@media (max-width: 576px) {
+
+    body .cpg-gallery-grid.columns-6,
+    body .cpg-gallery-grid.columns-5,
+    body .cpg-gallery-grid.columns-4,
+    body .cpg-gallery-grid.columns-3 {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
@@ -229,17 +255,24 @@
     .cpg-gallery-grid {
         gap: 0.75rem;
     }
-    
+
     .cpg-photo-card.cpg-style-fixed .cpg-photo-image {
         height: 120px;
+    }
+
+    body .cpg-gallery-grid.columns-6,
+    body .cpg-gallery-grid.columns-5,
+    body .cpg-gallery-grid.columns-4,
+    body .cpg-gallery-grid.columns-3 {
+        grid-template-columns: repeat(1, 1fr) !important;
     }
 }
 
 /* ====== HIGH SPECIFICITY CIRCLE FIXES (kept but refined) ====== */
 /* These stronger selectors remain to guard against theme overrides but are less invasive */
 .cpg-gallery-grid .cpg-photo-card.cpg-style-circle .cpg-photo-image {
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: auto;
     border-radius: 50%;
     overflow: visible;
     position: relative;
@@ -271,12 +304,29 @@
 }
 
 /* ====== GRID COLUMN HELPERS (ensure these exist in your critical CSS or main stylesheet) ====== */
-.cpg-gallery-grid.columns-1 { grid-template-columns: repeat(1, 1fr); }
-.cpg-gallery-grid.columns-2 { grid-template-columns: repeat(2, 1fr); }
-.cpg-gallery-grid.columns-3 { grid-template-columns: repeat(3, 1fr); }
-.cpg-gallery-grid.columns-4 { grid-template-columns: repeat(4, 1fr); }
-.cpg-gallery-grid.columns-5 { grid-template-columns: repeat(5, 1fr); }
-.cpg-gallery-grid.columns-6 { grid-template-columns: repeat(6, 1fr); }
+.cpg-gallery-grid.columns-1 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.cpg-gallery-grid.columns-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cpg-gallery-grid.columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.cpg-gallery-grid.columns-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.cpg-gallery-grid.columns-5 {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.cpg-gallery-grid.columns-6 {
+    grid-template-columns: repeat(6, 1fr);
+}
 
 /* Admin styles — additions for slider display and user-id validation status
    Merge these rules into your existing admin.css (or replace file).
@@ -290,11 +340,15 @@
     line-height: 1.25;
     color: #374151;
 }
+
 .cpg-field-status.cpg-status-error {
-    color: #b91c1c; /* red-700 */
+    color: #b91c1c;
+    /* red-700 */
 }
+
 .cpg-field-status.cpg-status-success {
-    color: #065f46; /* green-800 */
+    color: #065f46;
+    /* green-800 */
 }
 
 /* Range slider display (right side badge) */
@@ -306,7 +360,7 @@
     border-radius: 999px;
     font-weight: 700;
     font-size: 14px;
-    box-shadow: 0 6px 16px rgba(2,6,23,0.16);
+    box-shadow: 0 6px 16px rgba(2, 6, 23, 0.16);
 }
 
 /* When slider is used inline, ensure it's full-width on small screens */
@@ -315,6 +369,7 @@
     align-items: center;
     gap: 12px;
 }
+
 .cpg-range-slider {
     -webkit-appearance: none;
     width: 100%;
@@ -323,16 +378,18 @@
     background: #e6e7ea;
     outline: none;
 }
+
 .cpg-range-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 28px;
     height: 28px;
     border-radius: 50%;
     background: #111827;
-    box-shadow: 0 6px 18px rgba(2,6,23,0.16);
+    box-shadow: 0 6px 18px rgba(2, 6, 23, 0.16);
     cursor: pointer;
     border: 4px solid #ffffff;
 }
+
 .cpg-range-slider::-moz-range-thumb {
     width: 28px;
     height: 28px;
@@ -348,6 +405,7 @@
         flex-direction: column;
         align-items: stretch;
     }
+
     .cpg-range-value {
         align-self: flex-end;
     }
