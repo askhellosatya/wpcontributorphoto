@@ -34,10 +34,6 @@ class CPG_Admin {
         add_action( 'wp_ajax_cpg_dismiss_new_shortcode_notice', [ $this, 'ajax_dismiss_new_shortcode_notice' ] );
         add_action( 'wp_ajax_cpg_dismiss_setup_notice', [ $this, 'ajax_dismiss_setup_notice' ] );
         add_action( 'wp_ajax_cpg_dismiss_shortcode_notice', [ $this, 'ajax_dismiss_shortcode_notice' ] );
-        
-        // Debug: Force notice to show for testing
-        add_action( 'admin_notices', function() {
-        });
     }
 
     /**
@@ -95,21 +91,19 @@ class CPG_Admin {
      */
     public function admin_enqueue_assets( $hook ) {
 
-        wp_enqueue_style( 'cpg-admin', CPG_PLUGIN_URL . 'assets/css/admin.css', [], CPG_VERSION );
-
-        // Only load assets on our settings page (top-level page hook) or any page that contains our slug
-        if ( $hook !== 'toplevel_page_contributor-photo-gallery' && strpos( $hook, 'contributor-photo-gallery' ) === false ) {
-            return;
-        }
-
-        wp_enqueue_script( 'cpg-admin', CPG_PLUGIN_URL . 'assets/js/admin.js', [ 'jquery' ], CPG_VERSION, true );
-
-        // Localize ajax data / nonce for admin JS to reuse
-        wp_localize_script( 'cpg-admin', 'wpcpgAdmin', [
-            'ajaxurl' => admin_url( 'admin-ajax.php' ),
-            'nonce'   => wp_create_nonce( 'wpcpg_admin_nonce' ),
-        ] );
+    // Only our settings page (or any screen containing our slug)
+    if ( $hook !== 'toplevel_page_contributor-photo-gallery' && strpos( $hook, 'contributor-photo-gallery' ) === false ) {
+        return;
     }
+
+    wp_enqueue_style( 'cpg-admin', CPG_PLUGIN_URL . 'assets/css/admin.css', [], CPG_VERSION );
+    wp_enqueue_script( 'cpg-admin', CPG_PLUGIN_URL . 'assets/js/admin.js', [ 'jquery' ], CPG_VERSION, true );
+
+    wp_localize_script( 'cpg-admin', 'wpcpgAdmin', [
+        'ajaxurl' => admin_url( 'admin-ajax.php' ),
+        'nonce'   => wp_create_nonce( 'wpcpg_admin_nonce' ),
+    ] );
+}
 
     /**
      * Show setup notice if user ID is not configured
@@ -163,38 +157,7 @@ class CPG_Admin {
                         // Smooth fade out
                         notice.style.opacity = '0';
                         notice.style.transform = 'translateY(-10px)';
-                        
-                        setTimeout(function() {
-                            notice.remove();
-                        }, 200);
 
-                        // TESTING MODE: Show notice again after 3 seconds
-                        // Remove this setTimeout block when ready for production
-                        setTimeout(function() {
-                            console.log('CPG: Recreating notice for testing');
-                            var newNotice = notice.cloneNode(true);
-                            notice.parentNode.appendChild(newNotice);
-                            
-                            // Re-add event listeners to the new notice
-                            var dismissBtn = newNotice.querySelector('.cpg-setup-notice-dismiss');
-                            if (dismissBtn) {
-                                dismissBtn.addEventListener('click', function(e) {
-                                    e.preventDefault();
-                                    var noticeEl = this.closest('.cpg-setup-notice');
-                                    if (noticeEl) {
-                                        noticeEl.style.opacity = '0';
-                                        noticeEl.style.transform = 'translateY(-10px)';
-                                        setTimeout(function() {
-                                            noticeEl.remove();
-                                        }, 200);
-                                    }
-                                });
-                            }
-                        }, 3000);
-
-                        // COMMENTED OUT FOR TESTING: Send AJAX to persist dismissal
-                        // Uncomment this section when ready for production
-                        /*
                         var nonce = notice.getAttribute('data-cpg-nonce') || '';
                         var data = new FormData();
                         data.append('action', 'cpg_dismiss_setup_notice');
@@ -205,7 +168,7 @@ class CPG_Admin {
                             credentials: 'same-origin',
                             body: data
                         }).catch(function(){ /* ignore network errors */ });
-                        */
+                        
                     }
                 }
             }, { capture: true });
