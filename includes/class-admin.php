@@ -109,18 +109,21 @@ class CPG_Admin {
      * Show setup notice if user ID is not configured
      */
     public function maybe_show_setup_notice() {
-        
-        $options = cpg_get_plugin_options();
-        $user_id = isset( $options['default_user_id'] ) ? $options['default_user_id'] : '';
+    $options   = cpg_get_plugin_options();
+    $user_id   = isset( $options['default_user_id'] ) ? $options['default_user_id'] : '';
+    $dismissed = get_option( 'cpg_setup_notice_dismissed', 0 );
 
-        if ( ! empty( $user_id ) ) {
-            return;
-        }
+    // Already configured or dismissed → don't show
+    if ( ! empty( $user_id ) || $dismissed ) {
+        return;
+    }
 
-        $settings_url = esc_url( admin_url( 'admin.php?page=contributor-photo-gallery' ) );
-        $nonce = wp_create_nonce( 'cpg_setup_nonce' );
+    $is_settings_page = isset( $_GET['page'] ) && $_GET['page'] === 'contributor-photo-gallery'; // phpcs:ignore
+    $settings_url     = esc_url( admin_url( 'admin.php?page=contributor-photo-gallery' ) );
+    $nonce            = wp_create_nonce( 'cpg_setup_nonce' );
 
-        // Beautiful, elegant setup notice matching WordPress.org plugin style
+    if ( $is_settings_page ) :
+        // --- Your original pretty card (unchanged) — only on Settings page ---
         ?>
         <div class="cpg-setup-notice-wrapper">
             <div class="cpg-setup-notice" data-cpg-nonce="<?php echo esc_attr( $nonce ); ?>" data-cpg-action="cpg_dismiss_setup_notice">
@@ -144,52 +147,66 @@ class CPG_Admin {
 
         <script type="text/javascript">
         (function(){
-            console.log('CPG: Setup notice script loaded');
-            
-            // Clean dismiss functionality
             document.addEventListener('click', function (e) {
-                var el = e.target;
-                if (el && (el.classList.contains('cpg-setup-notice-dismiss') || el.closest('.cpg-setup-notice-dismiss'))) {
-                    e.preventDefault();
-                    console.log('CPG: Dismiss button clicked');
-                    var notice = el.closest('.cpg-setup-notice');
-                    if (notice) {
-                        // Smooth fade out
-                        notice.style.opacity = '0';
-                        notice.style.transform = 'translateY(-10px)';
+                var el = e.target.closest('.cpg-setup-notice-dismiss');
+                if (!el) return;
+                e.preventDefault();
+                var notice = el.closest('.cpg-setup-notice');
+                if (!notice) return;
+                notice.style.opacity = '0';
+                notice.style.transform = 'translateY(-10px)';
 
-                        var nonce = notice.getAttribute('data-cpg-nonce') || '';
-                        var data = new FormData();
-                        data.append('action', 'cpg_dismiss_setup_notice');
-                        data.append('nonce', nonce);
+                var data = new FormData();
+                data.append('action', 'cpg_dismiss_setup_notice');
+                data.append('nonce',  notice.getAttribute('data-cpg-nonce') || '');
 
-                        fetch("<?php echo esc_js( admin_url( 'admin-ajax.php' ) ); ?>", {
-                            method: 'POST',
-                            credentials: 'same-origin',
-                            body: data
-                        }).catch(function(){ /* ignore network errors */ });
-                        
-                    }
-                }
-            }, { capture: true });
-
-            // Simple entrance animation
-            document.addEventListener('DOMContentLoaded', function() {
-                var notice = document.querySelector('.cpg-setup-notice');
-                if (notice) {
-                    console.log('CPG: Notice found, adding animation');
-                    setTimeout(function() {
-                        notice.style.opacity = '1';
-                        notice.style.transform = 'translateY(0)';
-                    }, 100);
-                } else {
-                    console.log('CPG: No notice found in DOM');
-                }
-            });
+                fetch("<?php echo esc_js( admin_url( 'admin-ajax.php' ) ); ?>", {
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    body: data
+                }).catch(function(){});
+            }, true);
         })();
         </script>
         <?php
-    }
+        // --- end pretty card ---
+    else :
+        // --- Core WP notice everywhere else (Dashboard, Plugins, etc.) ---
+        ?>
+        <div class="notice notice-info is-dismissible cpg-setup-core"
+             data-cpg-action="cpg_dismiss_setup_notice"
+             data-cpg-nonce="<?php echo esc_attr( $nonce ); ?>">
+            <p>
+                <strong><?php esc_html_e( 'Contributor Photo Gallery', 'contributor-photo-gallery' ); ?>:</strong>
+                <?php esc_html_e( 'Ready to showcase your photo contributions?', 'contributor-photo-gallery' ); ?>
+                <a class="button button-primary" href="<?php echo $settings_url; ?>"><?php esc_html_e( 'Complete Setup', 'contributor-photo-gallery' ); ?></a>
+            </p>
+        </div>
+        <script type="text/javascript">
+        (function(){
+            // Persist dismissal when the user clicks the core "X"
+            document.addEventListener('click', function(e){
+                var close = e.target.closest('.notice-dismiss');
+                if (!close) return;
+                var wrap = close.closest('.cpg-setup-core');
+                if (!wrap) return;
+
+                var data = new FormData();
+                data.append('action', wrap.getAttribute('data-cpg-action') || 'cpg_dismiss_setup_notice');
+                data.append('nonce',  wrap.getAttribute('data-cpg-nonce')  || '');
+
+                fetch('<?php echo esc_js( admin_url( 'admin-ajax.php' ) ); ?>', {
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    body: data
+                }).catch(function(){});
+            }, true);
+        })();
+        </script>
+        <?php
+        // --- end core notice ---
+    endif;
+}
 
     /**
      * Show shortcode update notice on settings page
