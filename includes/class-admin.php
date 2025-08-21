@@ -217,7 +217,7 @@ class CPG_Admin {
                         <strong><?php esc_html_e( 'Shortcode Updated:', 'contributor-photo-gallery' ); ?></strong>
                         <span>
                             <?php esc_html_e( 'The gallery shortcode has changed to', 'contributor-photo-gallery' ); ?>
-                            <code>[cp_gallery]</code>.<?php esc_html_e( 'For the best experience, please update your existing shortcodes. Your old shortcodes will continue to work for now.', 'contributor-photo-gallery' ); ?>
+                            <code>[cp_gallery]</code>. <?php esc_html_e( 'For the best experience, please update your existing shortcodes. Your old shortcodes will continue to work for now.', 'contributor-photo-gallery' ); ?>
                         </span>
                     </div>
                     <button type="button" class="cpg-shortcode-notice-dismiss" aria-label="<?php esc_attr_e( 'Dismiss this notice', 'contributor-photo-gallery' ); ?>">
