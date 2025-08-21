@@ -49,8 +49,6 @@ Built for photographers, agencies, and community contributors who want polished 
 2. Search for **"Contributor Photo Gallery"** or upload the ZIP from GitHub.  
 3. Click **Install** → **Activate**.  
 
-![Plugin Install Page](https://github.com/user-attachments/assets/623bbecb-ad67-4c67-bf41-9056d8d1a222)
-
 ---
 
 ### Step 2: Configure Your Profile
@@ -84,9 +82,6 @@ Add this shortcode anywhere:
 
 ## 📖 Usage Examples
 
-<center><img width="307" height="673" alt="Usage_example_shortcodes" src="https://github.com/user-attachments/assets/515f45a8-fc16-4ce6-8da0-88ffeb3ca977" /></center>
-
-
 | Use Case | Shortcode | Description |
 |----------|-----------|-------------|
 | 🏆 **Portfolio Showcase** | `[cp_gallery per_page="20" columns="4"]` | Professional portfolios and showcases |
@@ -101,8 +96,6 @@ Uses your configured default settings.
 ### `[wpcontrib_photos]` (legacy)  
 - Fully supported to preserve older galleries.  
 - Internally maps to the same handler as `[cp_gallery]`.  
-
-![Shortcode Examples](https://github.com/user-attachments/assets/515f45a8-fc16-4ce6-8da0-88ffeb3ca977)
 
 ---
 
