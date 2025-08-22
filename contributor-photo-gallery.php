@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Contributor Photo Gallery
-Plugin URI: https://github.com/askhellosatya/contributor-photo-gallery/
+Plugin URI: https://wordpress.org/plugins/contributor-photo-gallery/
 Description: Showcase your contributions to WordPress.org/photos with elegant and responsive photo galleries.
 Version: 2.5.0
 Requires at least: 5.8
