@@ -2132,8 +2132,8 @@ body.wpcpg-modal-open {
 
 /* ====== SETUP NOTICE STYLING ====== */
 .cpg-setup-notice-wrapper {
-    margin-top: 40px;
-    margin-right: 20px;
+    margin: 5px 15px 2px;
+    padding: 1px 0;
     /* padding: 0 20px;
     position: relative;
     z-index: 999999; */
@@ -2178,8 +2178,8 @@ body.wpcpg-modal-open {
 .cpg-setup-notice-content {
     display: flex;
     align-items: center;
-    padding: 12px 16px;
-    gap: 16px;
+    padding: 12px;
+    gap: 14px;
 }
 
 .cpg-setup-notice-icon {
@@ -2262,8 +2262,8 @@ body.wpcpg-modal-open {
 
 /* ====== SHORTCODE NOTICE STYLING ====== */
 .cpg-shortcode-notice-wrapper {
-    margin: 20px 0;
-    padding: 0 20px;
+    margin: 5px 15px 2px;
+    padding: 1px 0;
 }
 
 .cpg-shortcode-notice {
@@ -2283,7 +2283,7 @@ body.wpcpg-modal-open {
 .cpg-shortcode-notice-content {
     display: flex;
     align-items: center;
-    padding: 12px 16px;
+    padding: 12px;
     gap: 16px;
 }
 

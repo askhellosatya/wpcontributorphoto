@@ -182,7 +182,7 @@
 /* ====== COMMON STYLES ====== */
 .cpg-photo-image img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 3/3;  /* pick ratio e.g. 4:3, 16:9 */
     object-fit: cover;
 }
 
@@ -288,6 +288,7 @@
     top: 0;
     left: 0;
     border-radius: 50%;
+    border: var(--cpg-card-border, none);
 }
 
 /* Ensure circle cards don't inherit theme background/borders */
@@ -410,3 +411,35 @@
         align-self: flex-end;
     }
 }
+
+
+
+.cpg-photo-card.cpg-style-polaroid {
+  display: inline-block;
+  border-radius: 10px;
+  padding: .75rem .75rem 1rem;
+  transform: rotate(-1deg);
+  transition: transform .15s ease, box-shadow .15s ease;
+  width: 100%;
+  max-width: 320px; /* optional, controls card width */
+}
+
+.cpg-photo-card.cpg-style-polaroid:hover { transform: rotate(0deg) translateY(-2px); }
+
+.cpg-photo-card.cpg-style-polaroid a {
+  display: block;
+}
+
+.cpg-photo-card.cpg-style-polaroid a:focus-visible {
+  box-shadow: 0 0 0 3px #1d4ed8;
+}
+
+.cpg-photo-card.cpg-style-polaroid img {
+  display: block;
+  aspect-ratio: 3/3;  /* pick ratio e.g. 4:3, 16:9 */
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.cpg-photo-content { margin-top: .75rem; text-align: center; }
+.cpg-caption { margin: 0; color: var(--cpg-caption-color); font-size: .95rem; line-height: 1.3; }
