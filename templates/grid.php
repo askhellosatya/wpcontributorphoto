@@ -68,7 +68,7 @@ foreach ($photos as $photo) {
         $target = ($options['open_in_new_tab'] ?? true) ? '_blank' : '';
         $rel = ($options['open_in_new_tab'] ?? true) ? 'noopener' : '';
 
-        echo '<div class="cpg-photo-card cpg-style-' . esc_attr($card_style) . '">';
+        echo '<div class="cpg-photo-card cpg-style-' . esc_attr($card_style) . '"' . $style_attr . '>';
         echo '<a href="' . esc_url($link) . '"' . ($target ? ' target="' . esc_attr($target) . '"' : '') . ($rel ? ' rel="' . esc_attr($rel) . '"' : '') . '>';
         echo '<div class="cpg-photo-image"><img src="' . esc_url($image_url) . '" alt="' . esc_attr($title) . '" loading="lazy"></div>';
 
